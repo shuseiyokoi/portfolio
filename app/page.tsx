@@ -173,14 +173,14 @@ export default function Home() {
             </h2>
 
             <div className="relative w-full aspect-[4/5] border border-cyan-200 rounded-sm overflow-hidden bg-cyan-50 group">
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.72)_100%)] z-10" />
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(34,211,238,0.05)_1px,transparent_1px)] bg-[size:100%_4px] z-20 pointer-events-none" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.22)_100%)] z-10" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_1px)] bg-[size:100%_4px] z-20 pointer-events-none" />
 
               <Image
-                src={`${basePath}/me.png`}
+                src={`${basePath}/photo.png`}
                 alt="Profile"
                 fill
-                className="object-cover z-0 opacity-80 group-hover:opacity-100 transition-all duration-500"
+                className="object-cover z-0 opacity-100 group-hover:opacity-100 transition-all duration-500"
               />
             </div>
           </div>
