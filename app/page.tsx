@@ -169,7 +169,7 @@ export default function Home() {
         >
           <div className="md:col-span-4 space-y-8">
             <h2 className="text-2xl font-bold tracking-widest text-cyan-600">
-              {"// ABOUT_ME"}
+              {"ABOUT ME"}
             </h2>
 
             <div className="relative w-full aspect-[4/5] border border-cyan-200 rounded-sm overflow-hidden bg-cyan-50 group">
@@ -187,14 +187,13 @@ export default function Home() {
 
           <div className="md:col-span-8 space-y-8 text-slate-700 leading-relaxed font-light">
             <p>
-              Every developer has a unique journey. Share yours here—whether
-              you&apos;re self-taught, a bootcamp grad, or transitioning
-              careers.{" "}
+              Data Scientist focused on building trustworthy, interpretable AI solutions that deliver real impact through strong software engineering skills and a business-driven mindset.
+              <br />
+              I work end-to-end across the data science lifecycle, defining business problems, mining and analyzing data, selecting and evaluating appropriate models, and deploying solutions that solve real-world problems. With a background in both data science and software engineering.
+              {"  "} <br />
               <strong className="text-fuchsia-600 font-bold">
-                Your story matters.
+                - Turning Data into Smiles.
               </strong>{" "}
-              Talk about what drives you to code and the impact you want to
-              make.
             </p>
 
             <div className="p-6 bg-cyan-50 border border-cyan-200 rounded-sm relative overflow-hidden">
