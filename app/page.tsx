@@ -74,6 +74,17 @@ const projects = [
     github: "",
     medium: "",
   },
+  {
+    title: "PROJECT_SIX",
+    description:
+      "Another hidden project for users to explore after clicking show more.",
+    tags: ["ML", "PANDAS", "SCIKIT-LEARN"],
+    color: "fuchsia" as const,
+    href: "#",
+    image: `${basePath}/project-six.png`,
+    github: "",
+    medium: "",
+  },
 ];
 
 export default function Home() {
