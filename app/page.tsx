@@ -17,7 +17,8 @@ const projects = [
     href: "https://main.d1tdd63qxtj4xh.amplifyapp.com",
     image: `${basePath}/askme_head.webp`,
     github: "https://github.com/shuseiyokoi/ask-me",
-    medium: "https://medium.com/@shuseiyokoi/llm-rag-chatbot-ask-me-807386c647b2",
+    medium:
+      "https://medium.com/@shuseiyokoi/llm-rag-chatbot-ask-me-807386c647b2",
   },
   {
     title: "Bias by Prompt in LLM",
@@ -28,7 +29,8 @@ const projects = [
     href: "https://medium.com/@shuseiyokoi/same-data-different-conclusion-bias-by-prompt-in-llm-analysis-c175905fede1",
     image: `${basePath}/biasbyprompt.png`,
     github: "https://github.com/shuseiyokoi/Bias-by-Prompt-LLM-Fairness",
-    medium: "https://medium.com/@shuseiyokoi/same-data-different-conclusion-bias-by-prompt-in-llm-analysis-c175905fede1",
+    medium:
+      "https://medium.com/@shuseiyokoi/same-data-different-conclusion-bias-by-prompt-in-llm-analysis-c175905fede1",
   },
   {
     title: "HealthSync",
@@ -39,13 +41,14 @@ const projects = [
     href: "https://testflight.apple.com/join/xBj899wE",
     image: `${basePath}/healthsync.png`,
     github: "https://github.com/shuseiyokoi/App-HealthSync",
-    medium: "https://medium.com/@shuseiyokoi/building-an-ai-health-agent-with-short-term-long-term-memory-4f6c28eab6f3",
+    medium:
+      "https://medium.com/@shuseiyokoi/building-an-ai-health-agent-with-short-term-long-term-memory-4f6c28eab6f3",
   },
   {
-    title: "wild fire or movie?",
+    title: "Wildfire Impact Analysis",
     description:
-      "Keep building and adding to your portfolio. Each project tells part of your developer story.",
-    tags: ["PYTHON", "DJANGO", "POSTGRESQL"],
+      "A data analysis project studying wildfire impact using economic and regional indicators.",
+    tags: ["PYTHON", "DID", "ECONOMICS"],
     color: "yellow" as const,
     href: "#",
     image: `${basePath}/project-four.png`,
@@ -53,10 +56,10 @@ const projects = [
     medium: "",
   },
   {
-    title: "PROJECT_FIVE",
+    title: "Movie ROI Prediction",
     description:
-      "An extra project that stays hidden until the user expands the portfolio list.",
-    tags: ["AWS", "DOCKER", "FASTAPI"],
+      "A machine learning project predicting movie ROI using metadata and AI-enhanced storyline analysis.",
+    tags: ["ML", "NLP", "PYTHON"],
     color: "cyan" as const,
     href: "#",
     image: `${basePath}/project-five.png`,
@@ -64,21 +67,10 @@ const projects = [
     medium: "",
   },
   {
-    title: "PROJECT_SIX",
+    title: "HowHot",
     description:
-      "Another hidden project for users to explore after clicking show more.",
-    tags: ["ML", "PANDAS", "SCIKIT-LEARN"],
-    color: "fuchsia" as const,
-    href: "#",
-    image: `${basePath}/project-six.png`,
-    github: "",
-    medium: "",
-  },
-  {
-    title: "PROJECT_SIX",
-    description:
-      "Another hidden project for users to explore after clicking show more.",
-    tags: ["ML", "PANDAS", "SCIKIT-LEARN"],
+      "A food spiciness prediction app that estimates spice level from food images.",
+    tags: ["CV", "PYTORCH", "AWS"],
     color: "fuchsia" as const,
     href: "#",
     image: `${basePath}/project-six.png`,
@@ -90,7 +82,69 @@ const projects = [
 export default function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
 
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [chatInput, setChatInput] = useState("");
+  const [chatLoading, setChatLoading] = useState(false);
+  const [chatMessages, setChatMessages] = useState([
+    {
+      sender: "bot",
+      text: "Hi! I'm Ask Me Bot. Ask about Shusei's projects, skills, background, or data science experience.",
+    },
+  ]);
+
   const visibleProjects = showAllProjects ? projects : projects.slice(0, 4);
+
+  const handleAskMeSend = async () => {
+    if (!chatInput.trim() || chatLoading) return;
+
+    const userPrompt = chatInput;
+
+    setChatMessages((prev) => [
+      ...prev,
+      {
+        sender: "user",
+        text: userPrompt,
+      },
+    ]);
+
+    setChatInput("");
+    setChatLoading(true);
+
+    try {
+      const res = await fetch(
+        "/api/ask-me",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ prompt: userPrompt }),
+        }
+      );
+
+      const data = await res.json();
+
+      setChatMessages((prev) => [
+        ...prev,
+        {
+          sender: "bot",
+          text: data?.response || "Sorry, I could not find an answer.",
+        },
+      ]);
+    } catch (error) {
+      console.error(error);
+
+      setChatMessages((prev) => [
+        ...prev,
+        {
+          sender: "bot",
+          text: "Sorry, something went wrong. Please try again.",
+        },
+      ]);
+    }
+
+    setChatLoading(false);
+  };
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-mono selection:bg-fuchsia-200 selection:text-fuchsia-900 overflow-x-hidden">
@@ -131,14 +185,14 @@ export default function Home() {
       </nav>
 
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-20">
-        {/* Selected Work */}
+        {/* Projects */}
         <section id="work" className="py-20 space-y-12">
           <div className="flex items-end justify-between border-b border-cyan-200 pb-4">
             <h2 className="text-2xl font-bold tracking-widest text-fuchsia-600">
               PROJECTS
             </h2>
             <span className="text-xs font-mono text-slate-500">
-              Showcase what you&apos;ve built with style
+              Selected data science and AI projects
             </span>
           </div>
 
@@ -180,7 +234,7 @@ export default function Home() {
         >
           <div className="md:col-span-4 space-y-8">
             <h2 className="text-2xl font-bold tracking-widest text-cyan-600">
-              {"ABOUT ME"}
+              ABOUT ME
             </h2>
 
             <div className="relative w-full aspect-[4/5] border border-cyan-200 rounded-sm overflow-hidden bg-cyan-50 group">
@@ -198,13 +252,18 @@ export default function Home() {
 
           <div className="md:col-span-8 space-y-8 text-slate-700 leading-relaxed font-light">
             <p>
-              Data Scientist focused on building trustworthy, interpretable AI solutions that deliver real impact through strong software engineering skills and a business-driven mindset.
+              Data Scientist focused on building trustworthy, interpretable AI
+              solutions that deliver real impact through strong software
+              engineering skills and a business-driven mindset.
               <br />
-              I work end-to-end across the data science lifecycle, defining business problems, mining and analyzing data, selecting and evaluating appropriate models, and deploying solutions that solve real-world problems. With a background in both data science and software engineering.
-              {"  "} <br />
+              I work end-to-end across the data science lifecycle, defining
+              business problems, mining and analyzing data, selecting and
+              evaluating appropriate models, and deploying solutions that solve
+              real-world problems.
+              <br />
               <strong className="text-fuchsia-600 font-bold">
                 - Turning Data into Smiles.
-              </strong>{" "}
+              </strong>
             </p>
 
             <div className="p-6 bg-cyan-50 border border-cyan-200 rounded-sm relative overflow-hidden">
@@ -217,36 +276,33 @@ export default function Home() {
                   </h3>
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> JavaScript /
-                      Python / TypeScript
+                      <span className="text-fuchsia-500">›</span> Python /
+                      TypeScript / JavaScript
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="text-fuchsia-500">›</span> React /
-                      Next.js / Node.js
+                      Next.js / FastAPI
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> Git / GitHub
-                      / VS Code
+                      <span className="text-fuchsia-500">›</span> AWS / Azure /
+                      PostgreSQL
                     </li>
                   </ul>
                 </div>
 
                 <div>
                   <h3 className="text-cyan-700 mb-4 tracking-widest uppercase text-xs border-b border-cyan-200 pb-2">
-                    PROTOCOLS
+                    FOCUS
                   </h3>
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> Always
-                      learning
+                      <span className="text-fuchsia-500">›</span> Applied AI
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> Ship &gt;
-                      Perfect
+                      <span className="text-fuchsia-500">›</span> MLOps
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> Open source
-                      contributor
+                      <span className="text-fuchsia-500">›</span> AI Fairness
                     </li>
                   </ul>
                 </div>
@@ -259,30 +315,38 @@ export default function Home() {
         <section id="contact" className="py-20 border-t border-cyan-200">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-              READY TO{" "}
+              LET&apos;S{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
-                LAUNCH?
+                CONNECT
               </span>
             </h2>
 
             <p className="text-slate-600 text-lg">
-              Fork this template on GitHub and make it yours. Update the
-              content, add your projects, and deploy to GitHub Pages in under 30
-              minutes.
+              Want to know more about my projects, research, or background? Try
+              the Ask Me chatbot or reach out directly.
             </p>
 
             <div className="flex flex-col items-center gap-6">
               <a
-                href="https://github.com/ladykerr/gfbs3-portfolio-demo"
+                href="mailto:your-email@example.com"
                 className="px-10 py-4 bg-fuchsia-600 text-white font-bold tracking-widest uppercase text-sm hover:bg-fuchsia-500 transition-all rounded-sm"
               >
-                FORK ON GITHUB
+                CONTACT ME
               </a>
 
               <div className="flex items-center gap-8 pt-4">
-                <SocialLink href="https://github.com" label="GITHUB" />
-                <SocialLink href="https://linkedin.com" label="LINKEDIN" />
-                <SocialLink href="https://twitter.com" label="TWITTER" />
+                <SocialLink
+                  href="https://github.com/shuseiyokoi"
+                  label="GITHUB"
+                />
+                <SocialLink
+                  href="https://linkedin.com"
+                  label="LINKEDIN"
+                />
+                <SocialLink
+                  href="https://medium.com/@shuseiyokoi"
+                  label="MEDIUM"
+                />
               </div>
             </div>
           </div>
@@ -290,27 +354,103 @@ export default function Home() {
       </main>
 
       <footer className="py-8 text-center text-xs font-mono text-slate-400 border-t border-cyan-100">
-        <p>
-          Made with ❤️ by{" "}
-          <a
-            href="https://gh.io/gfb"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-cyan-600 hover:text-cyan-500 transition-all"
-          >
-            GitHub for Beginners
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://gh.io/gfb-copilot"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-cyan-600 hover:text-cyan-500 transition-all"
-          >
-            GitHub Copilot
-          </a>
-        </p>
+        <p>Made with ❤️ by Shusei Yokoi</p>
       </footer>
+
+      {/* Ask Me Chat Popup */}
+      <div className="fixed bottom-5 right-5 z-[100] font-mono">
+        {isChatOpen && (
+          <div className="mb-3 w-[360px] h-[540px] sm:w-[400px] sm:h-[600px] max-w-[calc(100vw-2rem)] max-h-[calc(100vh-6rem)] bg-white border border-cyan-300 shadow-[0_0_30px_rgba(34,211,238,0.25)] rounded-sm overflow-hidden flex flex-col">
+            <div className="h-11 px-3 flex items-center justify-between bg-cyan-50 border-b border-cyan-200">
+              <div>
+                <p className="text-xs font-bold tracking-widest text-cyan-700">
+                  ASK ME
+                </p>
+                <p className="text-[10px] text-slate-500">
+                  Ask about Shusei
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsChatOpen(false)}
+                className="text-slate-500 hover:text-fuchsia-600 text-lg leading-none"
+                aria-label="Close Ask Me chat"
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto bg-slate-50 p-3 space-y-2">
+              {chatMessages.map((message, index) => (
+                <div
+                  key={index}
+                  className={`flex ${message.sender === "user"
+                    ? "justify-end"
+                    : "justify-start"
+                    }`}
+                >
+                  <div
+                    className={`max-w-[80%] rounded-sm px-3 py-2 text-xs leading-relaxed whitespace-pre-wrap ${message.sender === "user"
+                      ? "bg-cyan-600 text-white"
+                      : "bg-white border border-slate-200 text-slate-700"
+                      }`}
+                    style={{
+
+                      overflowWrap: "anywhere",
+
+                      wordBreak: "break-word",
+
+                    }}
+                  >
+                    {message.text}
+                  </div>
+                </div>
+              ))}
+
+              {chatLoading && (
+                <div className="flex justify-start">
+                  <div className="bg-white border border-slate-200 text-slate-500 rounded-sm px-3 py-2 text-xs">
+                    Thinking...
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="p-2 border-t border-cyan-100 bg-white flex gap-2">
+              <textarea
+                value={chatInput}
+                onChange={(e) => setChatInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    handleAskMeSend();
+                  }
+                }}
+                placeholder="Ask about Shusei..."
+                className="flex-1 h-9 resize-none border border-slate-300 rounded-sm px-2 py-2 text-xs outline-none focus:border-cyan-400"
+              />
+
+              <button
+                type="button"
+                onClick={handleAskMeSend}
+                disabled={chatLoading}
+                className="h-9 px-3 bg-fuchsia-600 text-white text-xs font-bold tracking-widest rounded-sm hover:bg-fuchsia-500 disabled:opacity-60"
+              >
+                {chatLoading ? "..." : "SEND"}
+              </button>
+            </div>
+          </div>
+        )}
+
+        <button
+          type="button"
+          onClick={() => setIsChatOpen((prev) => !prev)}
+          className="px-4 py-3 bg-fuchsia-600 text-white font-bold tracking-widest uppercase text-xs hover:bg-fuchsia-500 transition-all rounded-full shadow-lg border border-fuchsia-400"
+        >
+          {isChatOpen ? "CLOSE" : "ASK ME"}
+        </button>
+      </div>
     </div>
   );
 }
