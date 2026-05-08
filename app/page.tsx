@@ -435,7 +435,7 @@ export default function Home() {
                 type="button"
                 onClick={handleAskMeSend}
                 disabled={chatLoading}
-                className="h-9 px-3 bg-fuchsia-600 text-white text-xs font-bold tracking-widest rounded-sm hover:bg-fuchsia-500 disabled:opacity-60"
+                className="h-9 px-3 bg-cyan-600 text-white text-xs font-bold tracking-widest rounded-sm hover:bg-cyan-500 disabled:opacity-60"
               >
                 {chatLoading ? "..." : "SEND"}
               </button>
@@ -443,13 +443,15 @@ export default function Home() {
           </div>
         )}
 
-        <button
-          type="button"
-          onClick={() => setIsChatOpen((prev) => !prev)}
-          className="px-4 py-3 bg-fuchsia-600 text-white font-bold tracking-widest uppercase text-xs hover:bg-fuchsia-500 transition-all rounded-full shadow-lg border border-fuchsia-400"
-        >
-          {isChatOpen ? "CLOSE" : "ASK ME"}
-        </button>
+        {!isChatOpen && (
+          <button
+            type="button"
+            onClick={() => setIsChatOpen(true)}
+            className="px-4 py-3 bg-cyan-600 text-white font-bold tracking-widest uppercase text-xs hover:bg-cyan-500 transition-all rounded-full shadow-lg border border-cyan-400"
+          >
+            ASK ME
+          </button>
+        )}
       </div>
     </div>
   );
