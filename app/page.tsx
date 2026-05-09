@@ -13,7 +13,7 @@ const projects = [
     description:
       "An agentic AI chatbot with RAG-based reasoning that answers my career related questions.",
     tags: ["RAG", "LLM", "AWS", "CHATBOT"],
-    color: "cyan" as const,
+    color: "slate" as const,
     href: "https://main.d1tdd63qxtj4xh.amplifyapp.com",
     image: `${basePath}/askme_head.webp`,
     github: "https://github.com/shuseiyokoi/ask-me",
@@ -25,7 +25,7 @@ const projects = [
     description:
       "Shows that basic LLMs can change conclusions from the same loan data depending on prompt framing.",
     tags: ["LLM", "Fairness of AI"],
-    color: "fuchsia" as const,
+    color: "slate" as const,
     href: "https://medium.com/@shuseiyokoi/same-data-different-conclusion-bias-by-prompt-in-llm-analysis-c175905fede1",
     image: `${basePath}/biasbyprompt.png`,
     github: "https://github.com/shuseiyokoi/Bias-by-Prompt-LLM-Fairness",
@@ -37,7 +37,7 @@ const projects = [
     description:
       "An iOS app that syncs HealthKit data and delivers personalized health advice using Azure OpenAI.",
     tags: ["TYPESCRIPT", "LLM", "SWIFT", "IOS"],
-    color: "purple" as const,
+    color: "slate" as const,
     href: "https://testflight.apple.com/join/xBj899wE",
     image: `${basePath}/healthsync.png`,
     github: "https://github.com/shuseiyokoi/App-HealthSync",
@@ -49,7 +49,7 @@ const projects = [
     description:
       "A data analysis project studying wildfire impact using economic and regional indicators.",
     tags: ["PYTHON", "DID", "ECONOMICS"],
-    color: "yellow" as const,
+    color: "slate" as const,
     href: "#",
     image: `${basePath}/project-four.png`,
     github: "",
@@ -60,7 +60,7 @@ const projects = [
     description:
       "A machine learning project predicting movie ROI using metadata and AI-enhanced storyline analysis.",
     tags: ["ML", "NLP", "PYTHON"],
-    color: "cyan" as const,
+    color: "slate" as const,
     href: "#",
     image: `${basePath}/project-five.png`,
     github: "",
@@ -71,7 +71,7 @@ const projects = [
     description:
       "A food spiciness prediction app that estimates spice level from food images.",
     tags: ["CV", "PYTORCH", "AWS"],
-    color: "fuchsia" as const,
+    color: "slate" as const,
     href: "#",
     image: `${basePath}/project-six.png`,
     github: "",
@@ -111,16 +111,13 @@ export default function Home() {
     setChatLoading(true);
 
     try {
-      const res = await fetch(
-        "/api/ask-me",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ prompt: userPrompt }),
-        }
-      );
+      const res = await fetch("/api/ask-me", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt: userPrompt }),
+      });
 
       const data = await res.json();
 
@@ -147,38 +144,32 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-mono selection:bg-fuchsia-200 selection:text-fuchsia-900 overflow-x-hidden">
-      {/* Grid Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#dbeafe_1px,transparent_1px),linear-gradient(to_bottom,#dbeafe_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60" />
-        <div className="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-t from-fuchsia-100 to-transparent opacity-70" />
-      </div>
-
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-slate-900 selection:text-white overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-cyan-200">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link
             href="/"
-            className="text-lg font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-fuchsia-600 hover:to-cyan-500 transition-all duration-300"
+            className="text-xl font-semibold tracking-wide text-slate-900 hover:text-slate-500 transition-colors"
           >
             Shusei Yokoi
           </Link>
 
-          <div className="flex gap-8 text-xs font-bold tracking-widest uppercase text-slate-500">
-            <Link href="#work" className="hover:text-cyan-600 transition-all">
-              PROJECTS
+          <div className="flex gap-8 text-xs font-medium tracking-wide uppercase text-slate-500">
+            <Link href="#work" className="hover:text-slate-900 transition-colors">
+              Projects
             </Link>
             <Link
               href="#philosophy"
-              className="hover:text-fuchsia-600 transition-all"
+              className="hover:text-slate-900 transition-colors"
             >
-              ABOUT
+              About
             </Link>
             <Link
               href="#contact"
-              className="hover:text-yellow-600 transition-all"
+              className="hover:text-slate-900 transition-colors"
             >
-              CONTACT
+              Contact
             </Link>
           </div>
         </div>
@@ -187,11 +178,11 @@ export default function Home() {
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-20">
         {/* Projects */}
         <section id="work" className="py-20 space-y-12">
-          <div className="flex items-end justify-between border-b border-cyan-200 pb-4">
-            <h2 className="text-2xl font-bold tracking-widest text-fuchsia-600">
-              PROJECTS
+          <div className="flex items-end justify-between border-b border-slate-200 pb-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Projects
             </h2>
-            <span className="text-xs font-mono text-slate-500">
+            <span className="text-xs text-slate-500">
               Selected data science and AI projects
             </span>
           </div>
@@ -217,7 +208,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setShowAllProjects((prev) => !prev)}
-                className="px-6 py-3 border border-cyan-300 bg-cyan-50 text-cyan-700 font-bold tracking-widest uppercase text-sm hover:bg-cyan-100 transition-all rounded-sm"
+                className="px-6 py-3 border border-slate-300 bg-white text-slate-800 font-medium tracking-wide uppercase text-sm hover:bg-slate-100 transition-colors rounded-md"
               >
                 {showAllProjects
                   ? "SHOW LESS"
@@ -230,22 +221,19 @@ export default function Home() {
         {/* About */}
         <section
           id="philosophy"
-          className="py-20 grid md:grid-cols-12 gap-12 border-t border-cyan-200"
+          className="py-20 grid md:grid-cols-12 gap-12 border-t border-slate-200"
         >
           <div className="md:col-span-4 space-y-8">
-            <h2 className="text-2xl font-bold tracking-widest text-cyan-600">
-              ABOUT ME
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              About Me
             </h2>
 
-            <div className="relative w-full aspect-[4/5] border border-cyan-200 rounded-sm overflow-hidden bg-cyan-50 group">
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.22)_100%)] z-10" />
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_1px)] bg-[size:100%_4px] z-20 pointer-events-none" />
-
+            <div className="relative w-full aspect-[4/5] border border-slate-200 rounded-md overflow-hidden bg-slate-50 group">
               <Image
                 src={`${basePath}/photo.png`}
                 alt="Profile"
                 fill
-                className="object-cover z-0 opacity-100 group-hover:opacity-100 transition-all duration-500"
+                className="object-cover z-0 opacity-100 transition-all duration-500"
               />
             </div>
           </div>
@@ -261,48 +249,46 @@ export default function Home() {
               evaluating appropriate models, and deploying solutions that solve
               real-world problems.
               <br />
-              <strong className="text-fuchsia-600 font-bold">
-                - Turning Data into Smiles.
+              <strong className="text-slate-900 font-semibold">
+                — Turning Data into Smiles.
               </strong>
             </p>
 
-            <div className="p-6 bg-cyan-50 border border-cyan-200 rounded-sm relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-fuchsia-500 to-cyan-500" />
-
-              <div className="grid grid-cols-2 gap-8 font-mono text-sm">
+            <div className="p-6 bg-slate-50 border border-slate-200 rounded-md relative overflow-hidden">
+              <div className="grid grid-cols-2 gap-8 text-sm">
                 <div>
-                  <h3 className="text-cyan-700 mb-4 tracking-widest uppercase text-xs border-b border-cyan-200 pb-2">
-                    STACK_TRACE
+                  <h3 className="text-slate-900 mb-4 tracking-wide uppercase text-xs border-b border-slate-200 pb-2 font-semibold">
+                    Stack
                   </h3>
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> Python /
+                      <span className="text-slate-400">›</span> Python /
                       TypeScript / JavaScript
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> React /
+                      <span className="text-slate-400">›</span> React /
                       Next.js / FastAPI
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> AWS / Azure /
+                      <span className="text-slate-400">›</span> AWS / Azure /
                       PostgreSQL
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-cyan-700 mb-4 tracking-widest uppercase text-xs border-b border-cyan-200 pb-2">
-                    FOCUS
+                  <h3 className="text-slate-900 mb-4 tracking-wide uppercase text-xs border-b border-slate-200 pb-2 font-semibold">
+                    Focus
                   </h3>
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> Applied AI
+                      <span className="text-slate-400">›</span> Applied AI
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> MLOps
+                      <span className="text-slate-400">›</span> MLOps
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-fuchsia-500">›</span> AI Fairness
+                      <span className="text-slate-400">›</span> AI Fairness
                     </li>
                   </ul>
                 </div>
@@ -312,13 +298,10 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="py-20 border-t border-cyan-200">
+        <section id="contact" className="py-20 border-t border-slate-200">
           <div className="max-w-3xl mx-auto text-center space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-              LET&apos;S{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
-                CONNECT
-              </span>
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
+              Let&apos;s Connect
             </h2>
 
             <p className="text-slate-600 text-lg">
@@ -329,9 +312,9 @@ export default function Home() {
             <div className="flex flex-col items-center gap-6">
               <a
                 href="mailto:your-email@example.com"
-                className="px-10 py-4 bg-fuchsia-600 text-white font-bold tracking-widest uppercase text-sm hover:bg-fuchsia-500 transition-all rounded-sm"
+                className="px-10 py-4 bg-slate-900 text-white font-medium tracking-wide uppercase text-sm hover:bg-slate-700 transition-colors rounded-md"
               >
-                CONTACT ME
+                Contact Me
               </a>
 
               <div className="flex items-center gap-8 pt-4">
@@ -339,10 +322,7 @@ export default function Home() {
                   href="https://github.com/shuseiyokoi"
                   label="GITHUB"
                 />
-                <SocialLink
-                  href="https://linkedin.com"
-                  label="LINKEDIN"
-                />
+                <SocialLink href="https://linkedin.com" label="LINKEDIN" />
                 <SocialLink
                   href="https://medium.com/@shuseiyokoi"
                   label="MEDIUM"
@@ -353,35 +333,31 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="py-8 text-center text-xs font-mono text-slate-400 border-t border-cyan-100">
+      <footer className="py-8 text-center text-xs text-slate-400 border-t border-slate-100">
         <p>Made with ❤️ by Shusei Yokoi</p>
       </footer>
 
       {/* Ask Me Chat Popup */}
-      <div className="fixed bottom-5 right-5 z-[100] font-mono">
+      <div className="fixed bottom-5 right-5 z-[100]">
         {isChatOpen && (
-          <div className="mb-3 w-[360px] h-[540px] sm:w-[400px] sm:h-[600px] max-w-[calc(100vw-2rem)] max-h-[calc(100vh-6rem)] bg-white border border-cyan-300 shadow-[0_0_30px_rgba(34,211,238,0.25)] rounded-sm overflow-hidden flex flex-col">
-            <div className="h-11 px-3 flex items-center justify-between bg-cyan-50 border-b border-cyan-200">
+          <div className="mb-3 w-[360px] h-[540px] sm:w-[400px] sm:h-[600px] max-w-[calc(100vw-2rem)] max-h-[calc(100vh-6rem)] bg-white border border-slate-200 shadow-xl rounded-xl overflow-hidden flex flex-col">
+            <div className="h-12 px-4 flex items-center justify-between bg-white border-b border-slate-200">
               <div>
-                <p className="text-xs font-bold tracking-widest text-cyan-700">
-                  ASK ME
-                </p>
-                <p className="text-[10px] text-slate-500">
-                  Ask about Shusei
-                </p>
+                <p className="text-sm font-semibold text-slate-900">Ask Me</p>
+                <p className="text-xs text-slate-500">Ask about Shusei</p>
               </div>
 
               <button
                 type="button"
                 onClick={() => setIsChatOpen(false)}
-                className="text-slate-500 hover:text-fuchsia-600 text-lg leading-none"
+                className="w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-slate-900 hover:bg-slate-100 transition-colors"
                 aria-label="Close Ask Me chat"
               >
                 ×
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto bg-slate-50 p-3 space-y-2">
+            <div className="flex-1 overflow-y-auto bg-slate-50 p-4 space-y-3">
               {chatMessages.map((message, index) => (
                 <div
                   key={index}
@@ -391,16 +367,13 @@ export default function Home() {
                     }`}
                 >
                   <div
-                    className={`max-w-[80%] rounded-sm px-3 py-2 text-xs leading-relaxed whitespace-pre-wrap ${message.sender === "user"
-                      ? "bg-cyan-600 text-white"
-                      : "bg-white border border-slate-200 text-slate-700"
+                    className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm leading-relaxed whitespace-pre-wrap ${message.sender === "user"
+                      ? "bg-slate-900 text-white rounded-br-sm"
+                      : "bg-white border border-slate-200 text-slate-700 rounded-bl-sm"
                       }`}
                     style={{
-
                       overflowWrap: "anywhere",
-
                       wordBreak: "break-word",
-
                     }}
                   >
                     {message.text}
@@ -410,14 +383,14 @@ export default function Home() {
 
               {chatLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-white border border-slate-200 text-slate-500 rounded-sm px-3 py-2 text-xs">
+                  <div className="bg-white border border-slate-200 text-slate-500 rounded-2xl rounded-bl-sm px-4 py-2 text-sm">
                     Thinking...
                   </div>
                 </div>
               )}
             </div>
 
-            <div className="p-2 border-t border-cyan-100 bg-white flex gap-2">
+            <div className="p-3 border-t border-slate-200 bg-white flex gap-2">
               <textarea
                 value={chatInput}
                 onChange={(e) => setChatInput(e.target.value)}
@@ -428,16 +401,23 @@ export default function Home() {
                   }
                 }}
                 placeholder="Ask about Shusei..."
-                className="flex-1 h-9 resize-none border border-slate-300 rounded-sm px-2 py-2 text-xs outline-none focus:border-cyan-400"
+                className="flex-1 h-10 resize-none border border-slate-300 rounded-lg px-3 py-2 text-sm outline-none focus:border-slate-900"
               />
 
               <button
+
                 type="button"
+
                 onClick={handleAskMeSend}
+
                 disabled={chatLoading}
-                className="h-9 px-3 bg-cyan-600 text-white text-xs font-bold tracking-widest rounded-sm hover:bg-cyan-500 disabled:opacity-60"
+
+                className="h-10 px-4 bg-cyan-600 text-white text-xs font-semibold tracking-wide rounded-lg hover:bg-cyan-500 disabled:opacity-60 transition-colors"
+
               >
+
                 {chatLoading ? "..." : "SEND"}
+
               </button>
             </div>
           </div>
@@ -445,11 +425,19 @@ export default function Home() {
 
         {!isChatOpen && (
           <button
+
             type="button"
+
             onClick={() => setIsChatOpen(true)}
+
             className="px-4 py-3 bg-cyan-600 text-white font-bold tracking-widest uppercase text-xs hover:bg-cyan-500 transition-all rounded-full shadow-lg border border-cyan-400"
+
+            aria-label="Open Ask Me chat"
+
           >
+
             ASK ME
+
           </button>
         )}
       </div>
@@ -461,7 +449,6 @@ function ProjectCard({
   title,
   description,
   tags,
-  color,
   href,
   image,
   github,
@@ -470,42 +457,20 @@ function ProjectCard({
   title: string;
   description: string;
   tags: string[];
-  color: "cyan" | "fuchsia" | "purple" | "yellow";
+  color?: "slate";
   href: string;
   image?: string;
   github?: string;
   medium?: string;
 }) {
-  const validColors = ["cyan", "fuchsia", "purple", "yellow"] as const;
-  const safeColor = validColors.includes(color) ? color : "cyan";
-
-  const colorClasses = {
-    cyan: "group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]",
-    fuchsia:
-      "group-hover:border-fuchsia-400 group-hover:shadow-[0_0_20px_rgba(232,121,249,0.15)]",
-    purple:
-      "group-hover:border-purple-400 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]",
-    yellow:
-      "group-hover:border-yellow-400 group-hover:shadow-[0_0_20px_rgba(234,179,8,0.15)]",
-  };
-
-  const textColors = {
-    cyan: "group-hover:text-cyan-600",
-    fuchsia: "group-hover:text-fuchsia-600",
-    purple: "group-hover:text-purple-600",
-    yellow: "group-hover:text-yellow-600",
-  };
-
   return (
-    <div
-      className={`group block space-y-4 p-6 bg-white border border-slate-200 transition-all duration-300 rounded-sm ${colorClasses[safeColor]}`}
-    >
+    <div className="group block space-y-4 p-6 bg-white border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300 rounded-xl">
       {image && (
         <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative block w-full h-40 border border-slate-200 bg-slate-50 rounded-sm overflow-hidden"
+          className="relative block w-full h-40 border border-slate-200 bg-slate-50 rounded-lg overflow-hidden"
           aria-label={`Open ${title}`}
         >
           <Image
@@ -518,9 +483,7 @@ function ProjectCard({
       )}
 
       <div className="flex justify-between items-start gap-4">
-        <h3
-          className={`text-xl font-bold text-slate-900 tracking-wider transition-colors ${textColors[safeColor]}`}
-        >
+        <h3 className="text-xl font-semibold text-slate-900 tracking-tight transition-colors group-hover:text-slate-600">
           {title}
         </h3>
 
@@ -531,9 +494,7 @@ function ProjectCard({
           className="shrink-0"
           aria-label={`Open ${title}`}
         >
-          <ArrowUpRightIcon
-            className={`w-5 h-5 text-slate-400 transition-all hover:translate-x-1 hover:-translate-y-1 ${textColors[safeColor]}`}
-          />
+          <ArrowUpRightIcon className="w-5 h-5 text-slate-400 transition-all hover:translate-x-1 hover:-translate-y-1 group-hover:text-slate-900" />
         </a>
       </div>
 
@@ -545,7 +506,7 @@ function ProjectCard({
         {tags.map((tag) => (
           <span
             key={tag}
-            className="text-[10px] uppercase tracking-widest font-bold text-cyan-700 bg-cyan-50 px-2 py-1 border border-cyan-200 group-hover:border-cyan-300 transition-colors"
+            className="text-[10px] uppercase tracking-wide font-medium text-slate-600 bg-slate-100 px-2 py-1 border border-slate-200 transition-colors rounded-md"
           >
             {tag}
           </span>
@@ -559,7 +520,7 @@ function ProjectCard({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-xs font-bold tracking-widest text-slate-500 hover:text-slate-900 transition-all"
+              className="flex items-center gap-2 text-xs font-medium tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
               aria-label={`${title} GitHub repository`}
             >
               <GitHubIcon className="w-4 h-4" />
@@ -572,7 +533,7 @@ function ProjectCard({
               href={medium}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-xs font-bold tracking-widest text-slate-500 hover:text-green-700 transition-all"
+              className="flex items-center gap-2 text-xs font-medium tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
               aria-label={`${title} Medium blog`}
             >
               <MediumIcon className="w-4 h-4" />
@@ -591,7 +552,7 @@ function SocialLink({ href, label }: { href: string; label: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-xs font-bold tracking-widest text-slate-500 hover:text-cyan-600 transition-all"
+      className="text-xs font-medium tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
     >
       {label}
     </a>
