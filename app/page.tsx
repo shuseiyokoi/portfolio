@@ -184,11 +184,11 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-16">
+      <main className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-12">
         {/* About */}
         <section
           id="philosophy"
-          className="pt-14 pb-10 grid md:grid-cols-12 gap-10"
+          className="pt-12 pb-8 grid md:grid-cols-12 gap-8"
         >
           <div className="md:col-span-4">
             <div className="relative w-full aspect-[4/5] border border-slate-200 rounded-md overflow-hidden bg-slate-50 group">
@@ -230,7 +230,7 @@ export default function Home() {
         </section>
 
         {/* Career */}
-        <section id="career" className="pt-10 pb-16 border-t border-slate-200">
+        <section id="career" className="pt-8 pb-12">
           <div className="flex items-end justify-between border-b border-slate-200 pb-4 mb-6">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
               Experience & Education
@@ -241,7 +241,7 @@ export default function Home() {
             </span>
           </div>
 
-          <div className="space-y-10">
+          <div className="space-y-8">
             {/* Professional Experience */}
             <div>
               <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
@@ -593,7 +593,7 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="work" className="py-20 space-y-12 border-t border-slate-200">
+        <section id="career" className="pt-8 pb-12">
           <div className="flex items-end justify-between border-b border-slate-200 pb-4">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
               Projects
@@ -635,8 +635,8 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="py-20 border-t border-slate-200">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
+        <section id="contact" className="py-12 border-t border-slate-200">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
               Let&apos;s Connect
             </h2>
@@ -673,7 +673,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="py-8 text-center text-xs text-slate-400 border-t border-slate-100">
+      <footer className="py-6 text-center text-xs text-slate-400 border-t border-slate-100">
         <p>Made with ❤️ by Shusei Yokoi</p>
       </footer>
 
@@ -702,14 +702,14 @@ export default function Home() {
                 <div
                   key={index}
                   className={`flex ${message.sender === "user"
-                      ? "justify-end"
-                      : "justify-start"
+                    ? "justify-end"
+                    : "justify-start"
                     }`}
                 >
                   <div
                     className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm leading-relaxed whitespace-pre-wrap ${message.sender === "user"
-                        ? "bg-slate-900 text-white rounded-br-sm"
-                        : "bg-white border border-slate-200 text-slate-700 rounded-bl-sm"
+                      ? "bg-slate-900 text-white rounded-br-sm"
+                      : "bg-white border border-slate-200 text-slate-700 rounded-bl-sm"
                       }`}
                     style={{
                       overflowWrap: "anywhere",
