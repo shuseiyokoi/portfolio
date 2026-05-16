@@ -156,15 +156,24 @@ export default function Home() {
           </Link>
 
           <div className="flex gap-8 text-xs font-medium tracking-wide uppercase text-slate-500">
-            <Link href="#work" className="hover:text-slate-900 transition-colors">
-              Projects
-            </Link>
             <Link
               href="#philosophy"
               className="hover:text-slate-900 transition-colors"
             >
               About
             </Link>
+
+            <Link
+              href="#career"
+              className="hover:text-slate-900 transition-colors"
+            >
+              Career
+            </Link>
+
+            <Link href="#work" className="hover:text-slate-900 transition-colors">
+              Projects
+            </Link>
+
             <Link
               href="#contact"
               className="hover:text-slate-900 transition-colors"
@@ -176,8 +185,539 @@ export default function Home() {
       </nav>
 
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-20">
+        {/* About */}
+        <section
+          id="philosophy"
+          className="py-20 grid md:grid-cols-12 gap-12"
+        >
+          <div className="md:col-span-4 space-y-8">
+
+
+            <div className="relative w-full aspect-[4/5] border border-slate-200 rounded-md overflow-hidden bg-slate-50 group">
+              <Image
+                src={`${basePath}/photo.png`}
+                alt="Profile"
+                fill
+                className="object-cover z-0 opacity-100 transition-all duration-500"
+              />
+            </div>
+          </div>
+
+          <div className="md:col-span-8 space-y-8 text-slate-700 leading-relaxed font-light">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-900">
+              Shusei Yokoi
+            </h2>
+            <h3 className="text-2xl font-semibold tracking-tight text-slate-90">
+              Data Scientist / Research Assistant at USC ISI
+            </h3>
+            <p>
+              Data Scientist focused on building trustworthy, interpretable AI
+              solutions that deliver real impact through strong software
+              engineering skills and a business-driven mindset.
+              <br />
+              I work end-to-end across the data science lifecycle, defining
+              business problems, mining and analyzing data, selecting and
+              evaluating appropriate models, and deploying solutions that solve
+              real-world problems.
+              <br />
+              <strong className="text-slate-900 font-semibold">
+                — Turning Data into Smiles.
+              </strong>
+            </p>
+
+            {/* <div className="p-6 bg-slate-50 border border-slate-200 rounded-md relative overflow-hidden">
+              <div className="grid grid-cols-2 gap-8 text-sm">
+                <div>
+                  <h3 className="text-slate-900 mb-4 tracking-wide uppercase text-xs border-b border-slate-200 pb-2 font-semibold">
+                    Stack
+                  </h3>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-center gap-2">
+                      <span className="text-slate-400">›</span> Python /
+                      TypeScript / JavaScript
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-slate-400">›</span> React /
+                      Next.js / FastAPI
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-slate-400">›</span> AWS / Azure /
+                      PostgreSQL
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-slate-900 mb-4 tracking-wide uppercase text-xs border-b border-slate-200 pb-2 font-semibold">
+                    Focus
+                  </h3>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-center gap-2">
+                      <span className="text-slate-400">›</span> Applied AI
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-slate-400">›</span> MLOps
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-slate-400">›</span> AI Fairness
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div> */}
+          </div>
+        </section>
+
+        {/* Career */}
+        <section id="career" className="py-20 border-t border-slate-200">
+          <div className="flex items-end justify-between border-b border-slate-200 pb-4 mb-8">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Experience & Education
+            </h2>
+            <span className="text-xs text-slate-500">
+              Professional background and education
+            </span>
+          </div>
+
+          <div className="space-y-8">
+            {/* Professional Experience */}
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-4">
+                Professional Experience
+              </h3>
+
+              <div className="divide-y divide-slate-100">
+                {/* SoftBank Data Scientist */}
+                <details className="group py-4">
+                  <summary className="cursor-pointer list-none">
+                    <div className="grid md:grid-cols-12 gap-4 items-start">
+                      <div className="md:col-span-8 flex items-start gap-3">
+                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
+                          ▶
+                        </span>
+
+                        <div>
+                          <p className="text-sm font-semibold text-slate-900">
+                            SoftBank — Tokyo
+                          </p>
+                          <p className="text-xs text-slate-500 mt-1">
+                            Data Scientist
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                        2022 – 2024
+                      </p>
+                    </div>
+                  </summary>
+
+                  <div className="mt-4 ml-6 space-y-5 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        Gym Chain Health Data Analysis{" "}
+                        <span className="font-normal text-slate-500">| R, SQL</span>
+                      </p>
+
+                      <ul className="mt-2 space-y-1 list-disc pl-5">
+                        <li>
+                          Conducted comprehensive data analysis of 200,000 member
+                          records for a gymnasium company with 150+ branches across
+                          Japan.
+                        </li>
+                        <li>
+                          Identified a 3-month weight regain trend in younger members
+                          and developed tailored retention strategies.
+                        </li>
+                        <li>
+                          Implemented a notification service to re-engage members
+                          showing signs of losing interest in attending the gym,
+                          increasing re-engagement rate by 30%.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        Large Software Development Team Productivity Analysis{" "}
+                        <span className="font-normal text-slate-500">
+                          | SQL, Python, R
+                        </span>
+                      </p>
+
+                      <ul className="mt-2 space-y-1 list-disc pl-5">
+                        <li>
+                          Performed Difference-in-Differences analysis on ticketing
+                          system data to diagnose productivity bottlenecks.
+                        </li>
+                        <li>
+                          Determined that low productivity stemmed from resource
+                          allocation inefficiencies, then recommended more frequent
+                          ticket creation and resource optimization to improve team
+                          productivity.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+
+                {/* SoftBank Technical Project Manager */}
+                <details className="group py-4">
+                  <summary className="cursor-pointer list-none">
+                    <div className="grid md:grid-cols-12 gap-4 items-start">
+                      <div className="md:col-span-8 flex items-start gap-3">
+                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
+                          ▶
+                        </span>
+
+                        <div>
+                          <p className="text-sm font-semibold text-slate-900">
+                            SoftBank — Tokyo
+                          </p>
+                          <p className="text-xs text-slate-500 mt-1">
+                            Technical Project Manager
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                        2022 – 2024
+                      </p>
+                    </div>
+                  </summary>
+
+                  <div className="mt-4 ml-6 space-y-5 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        Led Application Development{" "}
+                        <span className="font-normal text-slate-500">
+                          | AWS, Azure, JavaScript, GitLab, SQL, VoltMX
+                        </span>
+                      </p>
+
+                      <ul className="mt-2 space-y-1 list-disc pl-5">
+                        <li>
+                          Directed the end-to-end development of a multi-platform office
+                          management system serving teams in Vietnam, China, and Japan,
+                          leveraging Agile methodology to ensure on-time delivery.
+                        </li>
+                        <li>
+                          Spearheaded UI/UX design, architected scalable back-end
+                          infrastructure, and oversaw rigorous testing processes.
+                        </li>
+                        <li>
+                          Managed deployment across temperature measurement devices,
+                          web, mobile, and NFC platforms, improving operational
+                          efficiency and cross-platform integration.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+
+                {/* SoftBank Contractor */}
+                <details className="group py-4">
+                  <summary className="cursor-pointer list-none">
+                    <div className="grid md:grid-cols-12 gap-4 items-start">
+                      <div className="md:col-span-8 flex items-start gap-3">
+                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
+                          ▶
+                        </span>
+
+                        <div>
+                          <p className="text-sm font-semibold text-slate-900">
+                            SoftBank — Tokyo
+                          </p>
+                          <p className="text-xs text-slate-500 mt-1">
+                            Data Scientist Contractor
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                        2020 – 2022
+                      </p>
+                    </div>
+                  </summary>
+
+                  <div className="mt-4 ml-6 space-y-5 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        Trade Area Analysis / Population Flow Analysis{" "}
+                        <span className="font-normal text-slate-500">
+                          | Tableau, SQL, Python, R
+                        </span>
+                      </p>
+
+                      <ul className="mt-2 space-y-1 list-disc pl-5">
+                        <li>
+                          Led trade area analysis for Izumi Co. with 190+ malls under
+                          SoftBank&apos;s Smart City project, using GPS, demographic,
+                          and Yahoo! search data to uncover customer trends.
+                        </li>
+                        <li>
+                          Built Tableau dashboards with demographic attributes and GPS
+                          data from diverse sources for actionable insights.
+                        </li>
+                        <li>
+                          Identified retention strengths and regional growth potential,
+                          recommending targeted ads, in-store enhancements, and loyalty
+                          programs that improved customer retention and informed
+                          campaigns.
+                        </li>
+                        <li>
+                          Contributed to the launch of a new Smart City trade area
+                          analysis department.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        AI Engineer{" "}
+                        <span className="font-normal text-slate-500">
+                          | Python, SQL
+                        </span>
+                      </p>
+
+                      <ul className="mt-2 space-y-1 list-disc pl-5">
+                        <li>
+                          Developed a population inflow prediction model to optimize
+                          billboard advertising placement.
+                        </li>
+                        <li>
+                          Improved model performance through data engineering and
+                          feature design, achieving an AUC of 0.70.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+
+                {/* ABC Cooking Studio */}
+                <details className="group py-4">
+                  <summary className="cursor-pointer list-none">
+                    <div className="grid md:grid-cols-12 gap-4 items-start">
+                      <div className="md:col-span-8 flex items-start gap-3">
+                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
+                          ▶
+                        </span>
+
+                        <div>
+                          <p className="text-sm font-semibold text-slate-900">
+                            ABC Cooking Studio — Tokyo
+                          </p>
+                          <p className="text-xs text-slate-500 mt-1">
+                            Data Scientist Intern
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                        2020
+                      </p>
+                    </div>
+                  </summary>
+
+                  <div className="mt-4 ml-6 space-y-5 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        EC Site Analysis{" "}
+                        <span className="font-normal text-slate-500">
+                          | SQL, Python, R, Google Analytics
+                        </span>
+                      </p>
+
+                      <ul className="mt-2 space-y-1 list-disc pl-5">
+                        <li>
+                          Analyzed EC site traffic using Google Analytics and modeled
+                          sales patterns across product categories.
+                        </li>
+                        <li>
+                          Predicted product sales using a multilevel model that
+                          accounted for category-specific price elasticity with random
+                          slopes.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            {/* Education */}
+            <div className="pt-4">
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-4">
+                Education
+              </h3>
+
+              <div className="divide-y divide-slate-100">
+                <details className="group py-4">
+                  <summary className="cursor-pointer list-none">
+                    <div className="grid md:grid-cols-12 gap-4 items-start">
+                      <div className="md:col-span-8 flex items-start gap-3">
+                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
+                          ▶
+                        </span>
+
+                        <div>
+                          <p className="text-sm font-semibold text-slate-900">
+                            University of Southern California
+                          </p>
+                          <p className="text-xs text-slate-500 mt-1">
+                            M.S. Applied Data Science
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                        Expected 2027
+                      </p>
+                    </div>
+                  </summary>
+
+                  <div className="mt-4 ml-6 text-sm text-slate-700 leading-relaxed">
+                    <p>
+                      Currently pursuing a master&apos;s degree in Applied Data Science,
+                      focusing on machine learning, trustworthy AI, LLM evaluation, and
+                      real-world data science applications.
+                    </p>
+                  </div>
+                </details>
+
+                <details className="group py-4">
+                  <summary className="cursor-pointer list-none">
+                    <div className="grid md:grid-cols-12 gap-4 items-start">
+                      <div className="md:col-span-8 flex items-start gap-3">
+                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
+                          ▶
+                        </span>
+
+                        <div>
+                          <p className="text-sm font-semibold text-slate-900">
+                            California Polytechnic State University, San Luis Obispo
+                          </p>
+                          <p className="text-xs text-slate-500 mt-1">
+                            B.S. Business Administration Information Systems / Minor in Statistics
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                        2021
+                      </p>
+                    </div>
+                  </summary>
+
+                  <div className="mt-4 ml-6 space-y-5 text-sm text-slate-700 leading-relaxed">
+
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        Relevant Coursework
+                      </p>
+
+                      <div className="mt-3 grid md:grid-cols-2 gap-6">
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+                            Programming &amp; Systems
+                          </p>
+
+                          <ul className="space-y-2 list-disc pl-5">
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Application Development:
+                              </span>{" "}
+                              Python programming logic, data structures, and business application
+                              development.
+                            </li>
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Database Systems:
+                              </span>{" "}
+                              ERD/UML modeling, advanced SQL, normalization, and database
+                              applications.
+                            </li>
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Systems Analysis &amp; Design:
+                              </span>{" "}
+                              SDLC, data flow diagrams, use cases, UI/UX, and requirements
+                              analysis.
+                            </li>
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Project Management:
+                              </span>{" "}
+                              Agile and Waterfall methods, scheduling, stakeholder management,
+                              and risk management.
+                            </li>
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Blockchain Development:
+                              </span>{" "}
+                              Smart contracts, decentralized applications, and blockchain
+                              infrastructure.
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">
+                            Data Science &amp; Statistics
+                          </p>
+
+                          <ul className="space-y-2 list-disc pl-5">
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Statistical Learning:
+                              </span>{" "}
+                              Random Forest, SVM, LASSO, GAM, CART, cross-validation, and model
+                              tuning.
+                            </li>
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Applied Regression Analysis:
+                              </span>{" "}
+                              Multiple and logistic regression, diagnostics, and non-linear
+                              modeling.
+                            </li>
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Multilevel &amp; Mixed Modeling:
+                              </span>{" "}
+                              HLM, mixed effects, and variance component analysis.
+                            </li>
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Statistical Computing:
+                              </span>{" "}
+                              R-based data cleaning, simulation, functional programming, and OOP.
+                            </li>
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Categorical Data Analysis:
+                              </span>{" "}
+                              Log-linear models, contingency tables, and model fit.
+                            </li>
+                            <li>
+                              <span className="font-medium text-slate-800">
+                                Time Series &amp; Forecasting:
+                              </span>{" "}
+                              ANOVA, correlation, exponential smoothing, and trend analysis.
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Projects */}
-        <section id="work" className="py-20 space-y-12">
+        <section id="work" className="py-20 space-y-12 border-t border-slate-200">
           <div className="flex items-end justify-between border-b border-slate-200 pb-4">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
               Projects
@@ -218,85 +758,6 @@ export default function Home() {
           )}
         </section>
 
-        {/* About */}
-        <section
-          id="philosophy"
-          className="py-20 grid md:grid-cols-12 gap-12 border-t border-slate-200"
-        >
-          <div className="md:col-span-4 space-y-8">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              About Me
-            </h2>
-
-            <div className="relative w-full aspect-[4/5] border border-slate-200 rounded-md overflow-hidden bg-slate-50 group">
-              <Image
-                src={`${basePath}/photo.png`}
-                alt="Profile"
-                fill
-                className="object-cover z-0 opacity-100 transition-all duration-500"
-              />
-            </div>
-          </div>
-
-          <div className="md:col-span-8 space-y-8 text-slate-700 leading-relaxed font-light">
-            <p>
-              Data Scientist focused on building trustworthy, interpretable AI
-              solutions that deliver real impact through strong software
-              engineering skills and a business-driven mindset.
-              <br />
-              I work end-to-end across the data science lifecycle, defining
-              business problems, mining and analyzing data, selecting and
-              evaluating appropriate models, and deploying solutions that solve
-              real-world problems.
-              <br />
-              <strong className="text-slate-900 font-semibold">
-                — Turning Data into Smiles.
-              </strong>
-            </p>
-
-            <div className="p-6 bg-slate-50 border border-slate-200 rounded-md relative overflow-hidden">
-              <div className="grid grid-cols-2 gap-8 text-sm">
-                <div>
-                  <h3 className="text-slate-900 mb-4 tracking-wide uppercase text-xs border-b border-slate-200 pb-2 font-semibold">
-                    Stack
-                  </h3>
-                  <ul className="space-y-2 text-slate-600">
-                    <li className="flex items-center gap-2">
-                      <span className="text-slate-400">›</span> Python /
-                      TypeScript / JavaScript
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-slate-400">›</span> React /
-                      Next.js / FastAPI
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-slate-400">›</span> AWS / Azure /
-                      PostgreSQL
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-slate-900 mb-4 tracking-wide uppercase text-xs border-b border-slate-200 pb-2 font-semibold">
-                    Focus
-                  </h3>
-                  <ul className="space-y-2 text-slate-600">
-                    <li className="flex items-center gap-2">
-                      <span className="text-slate-400">›</span> Applied AI
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-slate-400">›</span> MLOps
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-slate-400">›</span> AI Fairness
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Contact */}
         <section id="contact" className="py-20 border-t border-slate-200">
           <div className="max-w-3xl mx-auto text-center space-y-8">
@@ -311,7 +772,7 @@ export default function Home() {
 
             <div className="flex flex-col items-center gap-6">
               <a
-                href="mailto:your-email@example.com"
+                href="mailto:shuseiyokoi@gmail.com"
                 className="px-10 py-4 bg-slate-900 text-white font-medium tracking-wide uppercase text-sm hover:bg-slate-700 transition-colors rounded-md"
               >
                 Contact Me
@@ -322,7 +783,10 @@ export default function Home() {
                   href="https://github.com/shuseiyokoi"
                   label="GITHUB"
                 />
-                <SocialLink href="https://linkedin.com" label="LINKEDIN" />
+                <SocialLink
+                  href="https://www.linkedin.com/in/shusei-yokoi"
+                  label="LINKEDIN"
+                />
                 <SocialLink
                   href="https://medium.com/@shuseiyokoi"
                   label="MEDIUM"
@@ -361,9 +825,7 @@ export default function Home() {
               {chatMessages.map((message, index) => (
                 <div
                   key={index}
-                  className={`flex ${message.sender === "user"
-                    ? "justify-end"
-                    : "justify-start"
+                  className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"
                     }`}
                 >
                   <div
@@ -405,19 +867,12 @@ export default function Home() {
               />
 
               <button
-
                 type="button"
-
                 onClick={handleAskMeSend}
-
                 disabled={chatLoading}
-
                 className="h-10 px-4 bg-cyan-600 text-white text-xs font-semibold tracking-wide rounded-lg hover:bg-cyan-500 disabled:opacity-60 transition-colors"
-
               >
-
                 {chatLoading ? "..." : "SEND"}
-
               </button>
             </div>
           </div>
@@ -425,19 +880,12 @@ export default function Home() {
 
         {!isChatOpen && (
           <button
-
             type="button"
-
             onClick={() => setIsChatOpen(true)}
-
             className="px-4 py-3 bg-cyan-600 text-white font-bold tracking-widest uppercase text-xs hover:bg-cyan-500 transition-all rounded-full shadow-lg border border-cyan-400"
-
             aria-label="Open Ask Me chat"
-
           >
-
             ASK ME
-
           </button>
         )}
       </div>
