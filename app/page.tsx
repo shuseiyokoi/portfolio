@@ -15,7 +15,7 @@ const projects = [
     tags: ["RAG", "LLM", "AWS", "CHATBOT"],
     color: "slate" as const,
     href: "https://main.d1tdd63qxtj4xh.amplifyapp.com",
-    image: `${basePath}/askme_head.webp`,
+    image: `${basePath}/askme_head.png`,
     github: "https://github.com/shuseiyokoi/ask-me",
     medium:
       "https://medium.com/@shuseiyokoi/llm-rag-chatbot-ask-me-807386c647b2",
