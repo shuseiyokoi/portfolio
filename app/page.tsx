@@ -45,38 +45,49 @@ const projects = [
       "https://medium.com/@shuseiyokoi/building-an-ai-health-agent-with-short-term-long-term-memory-4f6c28eab6f3",
   },
   {
-    title: "Wildfire Impact Analysis",
+    title: "LLM Evaluation with Promptfoo",
     description:
-      "A data analysis project studying wildfire impact using economic and regional indicators.",
-    tags: ["PYTHON", "DID", "ECONOMICS"],
+      "Systematic comparison of language models like AWS Nova Pro vs. Micro using Promptfoo for RAG performance benchmarking.",
+    tags: ["RAG", "AWS", "LLM Evaluation"],
     color: "slate" as const,
-    href: "#",
-    image: `${basePath}/project-four.png`,
-    github: "",
-    medium: "",
+    href: "#948493",
+    image: `${basePath}/promptfoo.png`,
+    github: "https://github.com/shuseiyokoi/LLM-evaluation",
+    notion: "https://shuseiyokoi.notion.site/Promptfoo-LLM-Evaluation-Techniques-23bf61fbe85c8089ab63e64295bca69c",
   },
-  {
-    title: "Movie ROI Prediction",
-    description:
-      "A machine learning project predicting movie ROI using metadata and AI-enhanced storyline analysis.",
-    tags: ["ML", "NLP", "PYTHON"],
-    color: "slate" as const,
-    href: "#",
-    image: `${basePath}/project-five.png`,
-    github: "",
-    medium: "",
-  },
-  {
-    title: "HowHot",
-    description:
-      "A food spiciness prediction app that estimates spice level from food images.",
-    tags: ["CV", "PYTORCH", "AWS"],
-    color: "slate" as const,
-    href: "#",
-    image: `${basePath}/project-six.png`,
-    github: "",
-    medium: "",
-  },
+  // {
+  //   title: "HowHot",
+  //   description:
+  //     "A food spiciness prediction app that estimates spice level from food images.",
+  //   tags: ["CV", "PYTORCH", "AWS"],
+  //   color: "slate" as const,
+  //   href: "#",
+  //   image: `${basePath}/project-six.png`,
+  //   github: "",
+  //   medium: "",
+  // },
+  // {
+  //   title: "Movie ROI Prediction",
+  //   description:
+  //     "A machine learning project predicting movie ROI using metadata and AI-enhanced storyline analysis.",
+  //   tags: ["ML", "NLP", "PYTHON"],
+  //   color: "slate" as const,
+  //   href: "#",
+  //   image: `${basePath}/project-five.png`,
+  //   github: "",
+  //   medium: "",
+  // },
+  // {
+  //   title: "Wildfire Impact Analysis",
+  //   description:
+  //     "A data analysis project studying wildfire impact using economic and regional indicators.",
+  //   tags: ["PYTHON", "DID", "ECONOMICS"],
+  //   color: "slate" as const,
+  //   href: "#",
+  //   image: `${basePath}/project-four.png`,
+  //   github: "",
+  //   medium: "",
+  // },
 ];
 
 export default function Home() {
