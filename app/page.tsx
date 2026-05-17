@@ -50,7 +50,7 @@ const projects = [
       "Systematic comparison of language models like AWS Nova Pro vs. Micro using Promptfoo for RAG performance benchmarking.",
     tags: ["RAG", "AWS", "LLM Evaluation"],
     color: "slate" as const,
-    href: "#948493",
+    href: "https://github.com/shuseiyokoi/LLM-evaluation",
     image: `${basePath}/promptfoo.png`,
     github: "https://github.com/shuseiyokoi/LLM-evaluation",
     notion: "https://shuseiyokoi.notion.site/Promptfoo-LLM-Evaluation-Techniques-23bf61fbe85c8089ab63e64295bca69c",
@@ -204,8 +204,8 @@ export default function Home() {
           id="philosophy"
           className="pt-12 pb-8 grid md:grid-cols-12 gap-8"
         >
-          <div className="md:col-span-4">
-            <div className="relative w-full aspect-[4/5] border border-slate-200 rounded-md overflow-hidden bg-slate-50 group">
+          <div className="md:col-span-4 flex justify-center">
+            <div className="relative w-72 aspect-[4/5] border border-slate-200 rounded-md overflow-hidden bg-slate-50 group">
               <Image
                 src={`${basePath}/photo.png`}
                 alt="Profile"
@@ -770,7 +770,7 @@ export default function Home() {
           </button>
         )}
       </div>
-    </div>
+    </div >
   );
 }
 
