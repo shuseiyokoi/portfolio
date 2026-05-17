@@ -170,21 +170,24 @@ export default function Home() {
               Career
             </Link>
 
-            <Link href="#work" className="hover:text-slate-900 transition-colors">
+            <Link
+              href="#work"
+              className="hover:text-slate-900 transition-colors"
+            >
               Projects
             </Link>
 
-            <Link
-              href="#contact"
+            <a
+              href="mailto:shuseiyokoi@gmail.com"
               className="hover:text-slate-900 transition-colors"
             >
               Contact
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
 
-      <main className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-12">
+      <main className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-24">
         {/* About */}
         <section
           id="philosophy"
@@ -593,8 +596,8 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="career" className="pt-8 pb-12">
-          <div className="flex items-end justify-between border-b border-slate-200 pb-4">
+        <section id="work" className="pt-8 pb-12">
+          <div className="flex items-end justify-between border-b border-slate-200 pb-4 mb-6">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
               Projects
             </h2>
@@ -633,54 +636,43 @@ export default function Home() {
             </div>
           )}
         </section>
-
-        {/* Contact */}
-        <section id="contact" className="py-12 border-t border-slate-200">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
-              Let&apos;s Connect
-            </h2>
-
-            <p className="text-slate-600 text-lg">
-              Want to know more about my projects, research, or background? Try
-              the Ask Me chatbot or reach out directly.
-            </p>
-
-            <div className="flex flex-col items-center gap-6">
-              <a
-                href="mailto:shuseiyokoi@gmail.com"
-                className="px-10 py-4 bg-slate-900 text-white font-medium tracking-wide uppercase text-sm hover:bg-slate-700 transition-colors rounded-md"
-              >
-                Contact Me
-              </a>
-
-              <div className="flex items-center gap-8 pt-4">
-                <SocialLink
-                  href="https://github.com/shuseiyokoi"
-                  label="GITHUB"
-                />
-                <SocialLink
-                  href="https://www.linkedin.com/in/shusei-yokoi"
-                  label="LINKEDIN"
-                />
-                <SocialLink
-                  href="https://medium.com/@shuseiyokoi"
-                  label="MEDIUM"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
-      <footer className="py-6 text-center text-xs text-slate-400 border-t border-slate-100">
-        <p>Made with ❤️ by Shusei Yokoi</p>
+      <footer className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-slate-200">
+        <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+          <p className="text-xs text-slate-400">
+            Made with ❤️ by Shusei Yokoi
+          </p>
+
+          <div className="flex items-center gap-6 text-xs font-medium tracking-wide uppercase text-slate-500">
+            <a
+              href="mailto:shuseiyokoi@gmail.com"
+              className="hover:text-slate-900 transition-colors"
+            >
+              Email
+            </a>
+
+            <SocialLink href="https://github.com/shuseiyokoi" label="GitHub" />
+
+            <SocialLink
+              href="https://www.linkedin.com/in/shuseiyokoi"
+              label="LinkedIn"
+            />
+
+            <SocialLink href="https://medium.com/@shuseiyokoi" label="Medium" />
+
+            <SocialLink
+              href="https://x.com/shuseiyokoi"
+              label="X"
+            />
+          </div>
+        </div>
       </footer>
 
       {/* Ask Me Chat Popup */}
-      <div className="fixed bottom-5 right-5 z-[100]">
+      <div className="fixed bottom-20 right-5 z-[100]">
         {isChatOpen && (
-          <div className="mb-3 w-[360px] h-[540px] sm:w-[400px] sm:h-[600px] max-w-[calc(100vw-2rem)] max-h-[calc(100vh-6rem)] bg-white border border-slate-200 shadow-xl rounded-xl overflow-hidden flex flex-col">
+          <div className="mb-3 w-[360px] h-[540px] sm:w-[400px] sm:h-[600px] max-w-[calc(100vw-2rem)] max-h-[calc(100vh-8rem)] bg-white border border-slate-200 shadow-xl rounded-xl overflow-hidden flex flex-col">
             <div className="h-12 px-4 flex items-center justify-between bg-white border-b border-slate-200">
               <div>
                 <p className="text-sm font-semibold text-slate-900">Ask Me</p>
@@ -878,7 +870,7 @@ function SocialLink({ href, label }: { href: string; label: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-xs font-medium tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
+      className="text-xs font-medium tracking-wide uppercase text-slate-500 hover:text-slate-900 transition-colors"
     >
       {label}
     </a>
