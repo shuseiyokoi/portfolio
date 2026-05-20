@@ -55,28 +55,28 @@ const projects = [
     github: "https://github.com/shuseiyokoi/LLM-evaluation",
     notion: "https://shuseiyokoi.notion.site/Promptfoo-LLM-Evaluation-Techniques-23bf61fbe85c8089ab63e64295bca69c",
   },
-  // {
-  //   title: "HowHot",
-  //   description:
-  //     "A food spiciness prediction app that estimates spice level from food images.",
-  //   tags: ["CV", "PYTORCH", "AWS"],
-  //   color: "slate" as const,
-  //   href: "#",
-  //   image: `${basePath}/project-six.png`,
-  //   github: "",
-  //   medium: "",
-  // },
-  // {
-  //   title: "Movie ROI Prediction",
-  //   description:
-  //     "A machine learning project predicting movie ROI using metadata and AI-enhanced storyline analysis.",
-  //   tags: ["ML", "NLP", "PYTHON"],
-  //   color: "slate" as const,
-  //   href: "#",
-  //   image: `${basePath}/project-five.png`,
-  //   github: "",
-  //   medium: "",
-  // },
+  {
+    title: "California Wildfire Economic Recovery",
+    description:
+      "Used weather signals and difference-in-differences analysis to measure wildfire-related employment disruption and recovery.",
+    tags: ["DID", "Geospatial", "ECONOMICS"],
+    color: "slate" as const,
+    href: "https://github.com/shuseiyokoi/California-Wildfire-Economic-Recovery/tree/main",
+    image: `${basePath}/cal_fire.png`,
+    github: "https://github.com/shuseiyokoi/California-Wildfire-Economic-Recovery/tree/main",
+    medium: "",
+  },
+  {
+    title: "Movie ROI Prediction",
+    description:
+      "A machine learning project predicting movie ROI using metadata and AI-enhanced storyline analysis.",
+    tags: ["ML", "NLP", "PYTHON"],
+    color: "slate" as const,
+    href: "#",
+    image: `${basePath}/project-five.png`,
+    github: "",
+    medium: "",
+  },
   // {
   //   title: "Wildfire Impact Analysis",
   //   description:
@@ -222,19 +222,17 @@ export default function Home() {
               </h2>
 
               <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-700">
-                Data Scientist / Research Assistant at USC ISI
+                Data Scientist / Product Builder
               </h3>
             </div>
 
             <p>
-              Data Scientist focused on building trustworthy, interpretable AI
-              solutions that deliver real impact through strong software
-              engineering skills and a business-driven mindset.
+              Data Scientist with a focus on trustworthy and interpretable AI. Currently pursuing an M.S. in Applied Data Science at USC and conducting trustworthy AI research at ISI.
+
               <br />
-              I work end-to-end across the data science lifecycle, defining
-              business problems, mining and analyzing data, selecting and
-              evaluating appropriate models, and deploying solutions that solve
-              real-world problems.
+              I build data-driven solutions with strong software engineering skills and a business-driven mindset. I work end-to-end across the data science lifecycle, from defining business problems and analyzing data to evaluating models and deploying solutions that solve real-world problems.
+
+              <br />
               <br />
               <strong className="text-slate-900 font-semibold">
                 — Turning Data into Smiles.
@@ -578,6 +576,17 @@ export default function Home() {
                   <div className="mt-4 ml-6 space-y-4 text-sm text-slate-700 leading-relaxed">
                     <div>
                       <p className="font-semibold text-slate-900">
+                        Data Science & Statistics
+                      </p>
+                      <p className="mt-1">
+                        Statistical learning, regression analysis, multilevel
+                        and mixed modeling, categorical data analysis,
+                        statistical computing in R, time series, forecasting,
+                        and model evaluation.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-900">
                         Programming & Systems
                       </p>
                       <p className="mt-1">
@@ -588,17 +597,6 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <div>
-                      <p className="font-semibold text-slate-900">
-                        Data Science & Statistics
-                      </p>
-                      <p className="mt-1">
-                        Statistical learning, regression analysis, multilevel
-                        and mixed modeling, categorical data analysis,
-                        statistical computing in R, time series, forecasting,
-                        and model evaluation.
-                      </p>
-                    </div>
                   </div>
                 </details>
               </div>
