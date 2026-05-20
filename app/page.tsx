@@ -66,17 +66,17 @@ const projects = [
     github: "https://github.com/shuseiyokoi/California-Wildfire-Economic-Recovery/tree/main",
     medium: "",
   },
-  {
-    title: "Movie ROI Prediction",
-    description:
-      "A machine learning project predicting movie ROI using metadata and AI-enhanced storyline analysis.",
-    tags: ["ML", "NLP", "PYTHON"],
-    color: "slate" as const,
-    href: "#",
-    image: `${basePath}/project-five.png`,
-    github: "",
-    medium: "",
-  },
+  // {
+  //   title: "Movie ROI Prediction",
+  //   description:
+  //     "A machine learning project predicting movie ROI using metadata and AI-enhanced storyline analysis.",
+  //   tags: ["ML", "NLP", "PYTHON"],
+  //   color: "slate" as const,
+  //   href: "#",
+  //   image: `${basePath}/project-five.png`,
+  //   github: "",
+  //   medium: "",
+  // },
   // {
   //   title: "Wildfire Impact Analysis",
   //   description:
