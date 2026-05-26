@@ -650,7 +650,7 @@ export default function Home() {
       <footer className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-slate-200">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <p className="text-xs text-slate-400">
-            Made with ❤️ by Shusei Yokoi
+            Made by Shusei Yokoi
           </p>
 
           <div className="flex items-center gap-6 text-xs font-medium tracking-wide uppercase text-slate-500">
