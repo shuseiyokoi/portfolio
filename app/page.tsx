@@ -257,10 +257,78 @@ export default function Home() {
             {/* Professional Experience */}
             <div>
               <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+                Research Experience
+              </h3>
+
+              <div className="divide-y divide-slate-100">
+                {/* Research Experience */}
+                <details className="group py-3">
+                  <summary className="cursor-pointer list-none">
+                    <div className="grid md:grid-cols-12 gap-4 items-start">
+                      <div className="md:col-span-8 flex items-start gap-3">
+                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
+                          ▶
+                        </span>
+
+                        <div>
+                          <p className="text-sm font-semibold text-slate-900">
+                            Information Sciences Institute (ISI), University of Southern California
+                          </p>
+                          <p className="text-xs text-slate-500 mt-1">
+                            {/* Research Assistant */}
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                        2026 – Present
+                      </p>
+                    </div>
+                  </summary>
+
+                  <div className="mt-4 ml-6 space-y-5 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        Bias by Prompt LLM Fairness{" "}
+                        <span className="font-normal text-slate-500">
+                          | Python, R, SQL
+                        </span>
+                      </p>
+
+                      <ul className="mt-2 space-y-1 list-disc pl-5">
+                        <li>
+                          Conducting a research study on LLM fairness using Public HMDA mortgage
+                          application data.
+                        </li>
+                        <li>
+                          Interpreted and processed loan-level variables, including financial,
+                          demographic, property, and derived HMDA fields.
+                        </li>
+                        <li>
+                          Built a feature-selection framework to remove leakage, redundant, high-missing,
+                          and low-relevance fields.
+                        </li>
+                        <li>
+                          Designed prompt-based experiments to evaluate whether LLM decisions change
+                          under demographic or discrimination-related appeal conditions.
+                        </li>
+                        <li>
+                          Writing a research paper documenting the data-processing methodology,
+                          feature-selection logic, and experimental design.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
                 Professional Experience
               </h3>
 
               <div className="divide-y divide-slate-100">
+
                 {/* SoftBank Data Scientist */}
                 <details className="group py-3">
                   <summary className="cursor-pointer list-none">
