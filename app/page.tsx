@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Download } from "lucide-react";
 
 const basePath =
-  process.env.NODE_ENV === "production" ? "/gfbs3-portfolio-demo" : "portfolio";
+  process.env.NODE_ENV === "production" ? "portfolio" : "";
 
 const projects = [
   {
