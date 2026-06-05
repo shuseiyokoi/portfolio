@@ -19,6 +19,7 @@ const projects = [
     github: "https://github.com/shuseiyokoi/ask-me",
     medium:
       "https://medium.com/@shuseiyokoi/llm-rag-chatbot-ask-me-807386c647b2",
+    app: "https://main.d1tdd63qxtj4xh.amplifyapp.com",
   },
   {
     title: "Bias by Prompt in LLM",
@@ -43,6 +44,9 @@ const projects = [
     github: "https://github.com/shuseiyokoi/App-HealthSync",
     medium:
       "https://medium.com/@shuseiyokoi/building-an-ai-health-agent-with-short-term-long-term-memory-4f6c28eab6f3",
+    app:
+      "https://testflight.apple.com/join/xBj899wE",
+    appLabel: "TESTFLIGHT(iOS)",
   },
   {
     title: "LLM Evaluation with Promptfoo",
@@ -222,7 +226,7 @@ export default function Home() {
               </h2>
 
               <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-700">
-                Data Scientist / Product Builder
+                Data Scientist / Research Assistant
               </h3>
             </div>
 
@@ -249,7 +253,7 @@ export default function Home() {
             </h2>
 
             <span className="hidden md:block text-xs text-slate-500">
-              Professional background and education
+              {/* Professional background and education */}
             </span>
           </div>
 
@@ -272,10 +276,10 @@ export default function Home() {
 
                         <div>
                           <p className="text-sm font-semibold text-slate-900">
-                            Information Sciences Institute (ISI), University of Southern California
+                            USC Information Sciences Institute (ISI)
                           </p>
                           <p className="text-xs text-slate-500 mt-1">
-                            {/* Research Assistant */}
+                            Research Assistant
                           </p>
                         </div>
                       </div>
@@ -291,30 +295,21 @@ export default function Home() {
                       <p className="font-semibold text-slate-900">
                         Bias by Prompt LLM Fairness{" "}
                         <span className="font-normal text-slate-500">
-                          | Python, R, SQL
+                          | Python, ChatGPT, Claude, Gemini, Qwen
                         </span>
                       </p>
 
                       <ul className="mt-2 space-y-1 list-disc pl-5">
                         <li>
-                          Conducting a research study on LLM fairness using Public HMDA mortgage
-                          application data.
+                          Conducting research on trustworthy AI, focusing on fairness, bias, and reliability in LLM-based decision-making
                         </li>
                         <li>
-                          Interpreted and processed loan-level variables, including financial,
-                          demographic, property, and derived HMDA fields.
+                          Designed controlled experiments to evaluate the effects of prompt framing on responses across LLMs,
+                          including ChatGPT, Claude, Gemini, and Qwen
                         </li>
                         <li>
-                          Built a feature-selection framework to remove leakage, redundant, high-missing,
-                          and low-relevance fields.
-                        </li>
-                        <li>
-                          Designed prompt-based experiments to evaluate whether LLM decisions change
-                          under demographic or discrimination-related appeal conditions.
-                        </li>
-                        <li>
-                          Writing a research paper documenting the data-processing methodology,
-                          feature-selection logic, and experimental design.
+                          Identified early evidence that emotional prompt framing can alter LLM behavior, causing conclusion shifts in
+                          some models and reduced confidence in others
                         </li>
                       </ul>
                     </div>
@@ -329,6 +324,55 @@ export default function Home() {
 
               <div className="divide-y divide-slate-100">
 
+                {/* SoftBank Data Scientist */}
+                <details className="group py-3">
+                  <summary className="cursor-pointer list-none">
+                    <div className="grid md:grid-cols-12 gap-4 items-start">
+                      <div className="md:col-span-8 flex items-start gap-3">
+                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
+                          ▶
+                        </span>
+
+                        <div>
+                          <p className="text-sm font-semibold text-slate-900">
+                            Datify
+                          </p>
+                          <p className="text-xs text-slate-500 mt-1">
+                            Founder / AI Product Developer
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                        2025 – Present
+                      </p>
+                    </div>
+                  </summary>
+
+                  <div className="mt-4 ml-6 space-y-5 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        Founded and Developed an AI-powered Solutions{" "}
+                        <span className="font-normal text-slate-500">
+                          | R, Python, Swift, Azure OpenAI
+                        </span>
+                      </p>
+
+                      <ul className="mt-2 space-y-1 list-disc pl-5">
+                        <li>
+                          Founded Datify to build AI-powered products that help people improve their lives through personalization
+                        </li>
+                        <li>
+                          Developed HealthSync, an iOS AI health advisor app integrating Apple HealthKit and Azure OpenAI GPT-4o to deliver personalized health insights from biometric and activity data
+                        </li>
+                        <li>
+                          Built data pipelines to extract biometric data from Apple HealthKit and convert them into structured summaries for AI analysis to generate dynamic, contextual health advice, helping users track trends and
+                          stay on target with personal goals
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
                 {/* SoftBank Data Scientist */}
                 <details className="group py-3">
                   <summary className="cursor-pointer list-none">
@@ -670,16 +714,16 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section >
 
         {/* Projects */}
-        <section id="work" className="pt-8 pb-12">
+        < section id="work" className="pt-8 pb-12" >
           <div className="flex items-end justify-between border-b border-slate-200 pb-4 mb-6">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
               Projects
             </h2>
             <span className="text-xs text-slate-500">
-              Selected data science and AI projects
+              {/* Selected data science and AI projects */}
             </span>
           </div>
 
@@ -695,30 +739,46 @@ export default function Home() {
                 image={project.image}
                 github={project.github}
                 medium={project.medium}
+                app={project.app}
+                appLabel={project.appLabel}
               />
             ))}
           </div>
-
-          {projects.length > 4 && (
-            <div className="flex justify-center pt-4">
-              <button
-                type="button"
-                onClick={() => setShowAllProjects((prev) => !prev)}
-                className="px-6 py-3 border border-slate-300 bg-white text-slate-800 font-medium tracking-wide uppercase text-sm hover:bg-slate-100 transition-colors rounded-md"
+          {showAllProjects && (
+            <div className="flex justify-center pt-6">
+              <a
+                href="https://shuseiyokoi.notion.site/b431a86c98c4465f818de9af253b507e?v=04cea62a17da443786ea6c3f30a424a4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium tracking-wide text-slate-500 hover:text-slate-900 underline underline-offset-4 transition-colors"
               >
-                {showAllProjects
-                  ? "SHOW LESS"
-                  : `SHOW MORE (${projects.length - 4})`}
-              </button>
+                View more project notes on Notion
+              </a>
             </div>
           )}
-        </section>
-      </main>
+
+          {
+            projects.length > 4 && (
+              <div className="flex justify-center pt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowAllProjects((prev) => !prev)}
+                  className="px-6 py-3 border border-slate-300 bg-white text-slate-800 font-medium tracking-wide uppercase text-sm hover:bg-slate-100 transition-colors rounded-md"
+                >
+                  {showAllProjects
+                    ? "SHOW LESS"
+                    : `SHOW MORE (${projects.length - 4})`}
+                </button>
+              </div>
+            )
+          }
+        </section >
+      </main >
 
       <footer className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-slate-200">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <p className="text-xs text-slate-400">
-            Made by Shusei Yokoi
+            {/* Made by Shusei Yokoi */}
           </p>
 
           <div className="flex items-center gap-6 text-xs font-medium tracking-wide uppercase text-slate-500">
@@ -848,6 +908,8 @@ function ProjectCard({
   image,
   github,
   medium,
+  app,
+  appLabel = "APP",
 }: {
   title: string;
   description: string;
@@ -857,6 +919,8 @@ function ProjectCard({
   image?: string;
   github?: string;
   medium?: string;
+  app?: string;
+  appLabel?: string;
 }) {
   return (
     <div className="group block space-y-4 p-6 bg-white border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300 rounded-xl">
@@ -908,8 +972,20 @@ function ProjectCard({
         ))}
       </div>
 
-      {(github || medium) && (
+      {(app || github || medium) && (
         <div className="flex items-center gap-4 pt-3 border-t border-slate-100">
+          {app && (
+            <a
+              href={app}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-xs font-medium tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
+              aria-label={`${title} app`}
+            >
+              <GlobeIcon className="w-4 h-4" />
+              {appLabel}
+            </a>
+          )}
           {github && (
             <a
               href={github}
@@ -981,6 +1057,26 @@ function GitHubIcon({ className }: { className?: string }) {
       className={className}
     >
       <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.73c-2.78.62-3.37-1.38-3.37-1.38-.45-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.95c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.95.68 1.92v2.8c0 .27.18.59.69.49A10.07 10.07 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+    </svg>
+  );
+}
+
+function GlobeIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20" />
+      <path d="M12 2a15.3 15.3 0 0 1 0 20" />
+      <path d="M12 2a15.3 15.3 0 0 0 0 20" />
     </svg>
   );
 }
