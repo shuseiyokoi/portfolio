@@ -8,6 +8,10 @@ import { Download } from "lucide-react";
 const basePath =
   process.env.NODE_ENV === "production" ? "/portfolio" : "";
 
+const ASK_ME_API_URL =
+  "https://opv17qccr5.execute-api.us-east-1.amazonaws.com/dev/invoke-agent";
+
+
 const projects = [
   {
     title: "Ask Me",
@@ -127,7 +131,7 @@ export default function Home() {
     setChatLoading(true);
 
     try {
-      const res = await fetch("/api/ask-me", {
+      const res = await fetch(ASK_ME_API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -137,11 +141,18 @@ export default function Home() {
 
       const data = await res.json();
 
+      if (!res.ok) {
+        throw new Error(data?.error || "API request failed");
+      }
+
       setChatMessages((prev) => [
         ...prev,
         {
           sender: "bot",
-          text: data?.response || "Sorry, I could not find an answer.",
+          text:
+            data?.response ||
+            data?.error ||
+            "Sorry, I could not find an answer.",
         },
       ]);
     } catch (error) {
@@ -151,7 +162,10 @@ export default function Home() {
         ...prev,
         {
           sender: "bot",
-          text: "Sorry, something went wrong. Please try again.",
+          text:
+            error instanceof Error
+              ? error.message
+              : "Sorry, something went wrong. Please try again.",
         },
       ]);
     }
@@ -874,6 +888,7 @@ export default function Home() {
                     handleAskMeSend();
                   }
                 }}
+                maxLength={1000}
                 placeholder="Ask about Shusei..."
                 className="flex-1 h-10 resize-none border border-slate-300 rounded-lg px-3 py-2 text-sm outline-none focus:border-slate-900"
               />
