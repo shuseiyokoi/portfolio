@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Download } from "lucide-react";
 
 const basePath =
   process.env.NODE_ENV === "production" ? "/gfbs3-portfolio-demo" : "";
@@ -209,7 +210,7 @@ export default function Home() {
           className="pt-12 pb-8 grid md:grid-cols-12 gap-8"
         >
           <div className="md:col-span-4 flex justify-center">
-            <div className="relative w-72 aspect-[4/5] border border-slate-200 rounded-md overflow-hidden bg-slate-50 group">
+            <div className="relative w-72 aspect-[4.5/5] border border-slate-200 rounded-md overflow-hidden bg-slate-50 group">
               <Image
                 src={`${basePath}/photo.png`}
                 alt="Profile"
@@ -251,10 +252,18 @@ export default function Home() {
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
               Experience & Education
             </h2>
+            <a
+              href={`${basePath}/resumes/Resume_ShuseiYokoi_20260605.pdf`}
+              download
+              className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-slate-900"
+            >
+              <span>Resume</span>
+              <Download size={16} />
 
-            <span className="hidden md:block text-xs text-slate-500">
-              {/* Professional background and education */}
-            </span>
+            </a>
+            {/* <span className="hidden md:block text-xs text-slate-500">
+              Professional background and education
+            </span> */}
           </div>
 
           <div className="space-y-8">
@@ -323,8 +332,6 @@ export default function Home() {
               </h3>
 
               <div className="divide-y divide-slate-100">
-
-                {/* SoftBank Data Scientist */}
                 <details className="group py-3">
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
@@ -373,7 +380,7 @@ export default function Home() {
                     </div>
                   </div>
                 </details>
-                {/* SoftBank Data Scientist */}
+
                 <details className="group py-3">
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
@@ -448,7 +455,7 @@ export default function Home() {
                   </div>
                 </details>
 
-                {/* SoftBank Technical Project Manager */}
+
                 <details className="group py-3">
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
@@ -496,8 +503,6 @@ export default function Home() {
                     </div>
                   </div>
                 </details>
-
-                {/* SoftBank Contractor */}
                 <details className="group py-3">
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
