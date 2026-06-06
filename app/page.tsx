@@ -271,7 +271,7 @@ export default function Home() {
             <a
               href={`${basePath}/resumes/Resume_ShuseiYokoi_20260605.pdf`}
               download
-              className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-slate-900"
+              className="mt-2 inline-flex items-center gap-2 text-base font-medium text-slate-700 hover:text-slate-900"
             >
               <span>Resume</span>
               <Download size={16} />
@@ -285,7 +285,7 @@ export default function Home() {
           <div className="space-y-8">
             {/* Professional Experience */}
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
                 Research Experience
               </h3>
 
@@ -302,16 +302,16 @@ export default function Home() {
                         />
 
                         <div>
-                          <p className="text-sm font-semibold text-slate-900">
+                          <p className="text-base font-semibold text-slate-900">
                             USC Information Sciences Institute (ISI)
                           </p>
-                          <p className="text-xs text-slate-500 mt-1">
+                          <p className="text-sm text-slate-500 mt-1">
                             Research Assistant
                           </p>
                         </div>
                       </div>
 
-                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                      <p className="md:col-span-4 text-sm text-slate-500 md:text-right">
                         2026 – Present
                       </p>
                     </div>
@@ -345,7 +345,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
                 Professional Experience
               </h3>
 
@@ -361,16 +361,16 @@ export default function Home() {
                         />
 
                         <div>
-                          <p className="text-sm font-semibold text-slate-900">
+                          <p className="text-base font-semibold text-slate-900">
                             Datify
                           </p>
-                          <p className="text-xs text-slate-500 mt-1">
+                          <p className="text-sm text-slate-500 mt-1">
                             Founder / AI Product Developer
                           </p>
                         </div>
                       </div>
 
-                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                      <p className="md:col-span-4 text-sm text-slate-500 md:text-right">
                         2025 – Present
                       </p>
                     </div>
@@ -412,16 +412,16 @@ export default function Home() {
                         />
 
                         <div>
-                          <p className="text-sm font-semibold text-slate-900">
+                          <p className="text-base font-semibold text-slate-900">
                             SoftBank
                           </p>
-                          <p className="text-xs text-slate-500 mt-1">
+                          <p className="text-sm text-slate-500 mt-1">
                             Data Scientist
                           </p>
                         </div>
                       </div>
 
-                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                      <p className="md:col-span-4 text-sm text-slate-500 md:text-right">
                         2022 – 2024
                       </p>
                     </div>
@@ -489,16 +489,16 @@ export default function Home() {
                         />
 
                         <div>
-                          <p className="text-sm font-semibold text-slate-900">
+                          <p className="text-base font-semibold text-slate-900">
                             SoftBank
                           </p>
-                          <p className="text-xs text-slate-500 mt-1">
+                          <p className="text-sm text-slate-500 mt-1">
                             Technical Project Manager
                           </p>
                         </div>
                       </div>
 
-                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                      <p className="md:col-span-4 text-sm text-slate-500 md:text-right">
                         2022 – 2024
                       </p>
                     </div>
@@ -538,16 +538,16 @@ export default function Home() {
                         />
 
                         <div>
-                          <p className="text-sm font-semibold text-slate-900">
+                          <p className="text-base font-semibold text-slate-900">
                             SoftBank
                           </p>
-                          <p className="text-xs text-slate-500 mt-1">
+                          <p className="text-sm text-slate-500 mt-1">
                             Data Scientist Contractor
                           </p>
                         </div>
                       </div>
 
-                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                      <p className="md:col-span-4 text-sm text-slate-500 md:text-right">
                         2020 – 2022
                       </p>
                     </div>
@@ -613,16 +613,16 @@ export default function Home() {
                         />
 
                         <div>
-                          <p className="text-sm font-semibold text-slate-900">
+                          <p className="text-base font-semibold text-slate-900">
                             ABC Cooking Studio
                           </p>
-                          <p className="text-xs text-slate-500 mt-1">
+                          <p className="text-sm text-slate-500 mt-1">
                             Data Scientist Intern
                           </p>
                         </div>
                       </div>
 
-                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                      <p className="md:col-span-4 text-sm text-slate-500 md:text-right">
                         2020
                       </p>
                     </div>
@@ -655,7 +655,7 @@ export default function Home() {
 
             {/* Education */}
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">
+              <h3 className="text-base font-semibold uppercase tracking-wide text-slate-500 mb-3">
                 Education
               </h3>
 
@@ -671,16 +671,16 @@ export default function Home() {
                         />
 
                         <div>
-                          <p className="text-sm font-semibold text-slate-900">
+                          <p className="text-base font-semibold text-slate-900">
                             University of Southern California
                           </p>
-                          <p className="text-xs text-slate-500 mt-1">
+                          <p className="text-sm text-slate-500 mt-1">
                             M.S. Applied Data Science
                           </p>
                         </div>
                       </div>
 
-                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                      <p className="md:col-span-4 text-sm text-slate-500 md:text-right">
                         Expected 2027
                       </p>
                     </div>
@@ -705,18 +705,18 @@ export default function Home() {
                         />
 
                         <div>
-                          <p className="text-sm font-semibold text-slate-900">
+                          <p className="text-base font-semibold text-slate-900">
                             California Polytechnic State University, San Luis
                             Obispo
                           </p>
-                          <p className="text-xs text-slate-500 mt-1">
+                          <p className="text-sm text-slate-500 mt-1">
                             B.S. Business Administration, Information Systems /
                             Minor in Statistics
                           </p>
                         </div>
                       </div>
 
-                      <p className="md:col-span-4 text-xs text-slate-500 md:text-right">
+                      <p className="md:col-span-4 text-sm text-slate-500 md:text-right">
                         2021
                       </p>
                     </div>
