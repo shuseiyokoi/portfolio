@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Download } from "lucide-react";
+import { Download, ChevronRight } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -187,7 +187,7 @@ export default function Home() {
             Shusei Yokoi
           </Link>
 
-          <div className="flex gap-8 text-xs font-medium tracking-wide uppercase text-slate-500">
+          <div className="hidden sm:flex gap-8 text-xs font-medium tracking-wide uppercase text-slate-500">
             <Link
               href="#philosophy"
               className="hover:text-slate-900 transition-colors"
@@ -295,9 +295,11 @@ export default function Home() {
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
-                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
-                          ▶
-                        </span>
+                        <ChevronRight
+                          size={16}
+                          strokeWidth={2}
+                          className="mt-0.5 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-90"
+                        />
 
                         <div>
                           <p className="text-sm font-semibold text-slate-900">
@@ -352,9 +354,11 @@ export default function Home() {
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
-                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
-                          ▶
-                        </span>
+                        <ChevronRight
+                          size={16}
+                          strokeWidth={2}
+                          className="mt-0.5 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-90"
+                        />
 
                         <div>
                           <p className="text-sm font-semibold text-slate-900">
@@ -401,9 +405,11 @@ export default function Home() {
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
-                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
-                          ▶
-                        </span>
+                        <ChevronRight
+                          size={16}
+                          strokeWidth={2}
+                          className="mt-0.5 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-90"
+                        />
 
                         <div>
                           <p className="text-sm font-semibold text-slate-900">
@@ -476,9 +482,11 @@ export default function Home() {
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
-                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
-                          ▶
-                        </span>
+                        <ChevronRight
+                          size={16}
+                          strokeWidth={2}
+                          className="mt-0.5 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-90"
+                        />
 
                         <div>
                           <p className="text-sm font-semibold text-slate-900">
@@ -523,9 +531,11 @@ export default function Home() {
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
-                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
-                          ▶
-                        </span>
+                        <ChevronRight
+                          size={16}
+                          strokeWidth={2}
+                          className="mt-0.5 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-90"
+                        />
 
                         <div>
                           <p className="text-sm font-semibold text-slate-900">
@@ -596,9 +606,11 @@ export default function Home() {
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
-                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
-                          ▶
-                        </span>
+                        <ChevronRight
+                          size={16}
+                          strokeWidth={2}
+                          className="mt-0.5 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-90"
+                        />
 
                         <div>
                           <p className="text-sm font-semibold text-slate-900">
@@ -652,9 +664,11 @@ export default function Home() {
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
-                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
-                          ▶
-                        </span>
+                        <ChevronRight
+                          size={16}
+                          strokeWidth={2}
+                          className="mt-0.5 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-90"
+                        />
 
                         <div>
                           <p className="text-sm font-semibold text-slate-900">
@@ -684,9 +698,11 @@ export default function Home() {
                   <summary className="cursor-pointer list-none">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
-                        <span className="mt-1 text-slate-400 text-xs transition-transform group-open:rotate-90">
-                          ▶
-                        </span>
+                        <ChevronRight
+                          size={16}
+                          strokeWidth={2}
+                          className="mt-0.5 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-90"
+                        />
 
                         <div>
                           <p className="text-sm font-semibold text-slate-900">
@@ -797,12 +813,12 @@ export default function Home() {
       </main >
 
       <footer className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-slate-200">
-        <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-center sm:justify-between">
           <p className="text-xs text-slate-400">
             {/* Made by Shusei Yokoi */}
           </p>
 
-          <div className="flex items-center gap-6 text-xs font-medium tracking-wide uppercase text-slate-500">
+          <div className="flex items-center gap-3 sm:gap-6 text-[10px] sm:text-xs font-medium tracking-wide uppercase text-slate-500">
             <a
               href="mailto:shuseiyokoi@gmail.com"
               className="hover:text-slate-900 transition-colors"
@@ -828,9 +844,9 @@ export default function Home() {
       </footer>
 
       {/* Ask Me Chat Popup */}
-      <div className="fixed bottom-20 right-5 z-[100]">
+      <div className="fixed bottom-20 right-4 sm:right-5 z-[100]">
         {isChatOpen && (
-          <div className="mb-3 w-[360px] h-[540px] sm:w-[400px] sm:h-[600px] max-w-[calc(100vw-2rem)] max-h-[calc(100vh-8rem)] bg-white border border-slate-200 shadow-xl rounded-xl overflow-hidden flex flex-col">
+          <div className="mb-3 w-[calc(100vw-2rem)] h-[70vh] sm:w-[400px] sm:h-[600px] max-h-[calc(100vh-8rem)] bg-white border border-slate-200 shadow-xl rounded-xl overflow-hidden flex flex-col">
             <div className="h-12 px-4 flex items-center justify-between bg-white border-b border-slate-200">
               <div>
                 <p className="text-sm font-semibold text-slate-900">Ask Me</p>
