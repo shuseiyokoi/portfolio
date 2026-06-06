@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Download } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const basePath =
   process.env.NODE_ENV === "production" ? "/portfolio" : "";
@@ -839,7 +841,7 @@ export default function Home() {
                 type="button"
                 onClick={() => setIsChatOpen(false)}
                 className="w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-slate-900 hover:bg-slate-100 transition-colors"
-                aria-label="Close Ask Me chat"
+              // aria-label="Close Ask Me chat"
               >
                 ×
               </button>
@@ -855,8 +857,8 @@ export default function Home() {
                     }`}
                 >
                   <div
-                    className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm leading-relaxed whitespace-pre-wrap ${message.sender === "user"
-                      ? "bg-slate-900 text-white rounded-br-sm"
+                    className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm leading-relaxed ${message.sender === "user"
+                      ? "bg-cyan-600 text-white rounded-br-sm"
                       : "bg-white border border-slate-200 text-slate-700 rounded-bl-sm"
                       }`}
                     style={{
@@ -864,7 +866,38 @@ export default function Home() {
                       wordBreak: "break-word",
                     }}
                   >
-                    {message.text}
+                    {message.sender === "bot" ? (
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                          ul: ({ children }) => (
+                            <ul className="list-disc pl-5 mb-2 space-y-1">{children}</ul>
+                          ),
+                          ol: ({ children }) => (
+                            <ol className="list-decimal pl-5 mb-2 space-y-1">{children}</ol>
+                          ),
+                          li: ({ children }) => <li>{children}</li>,
+                          strong: ({ children }) => (
+                            <strong className="font-semibold text-slate-900">{children}</strong>
+                          ),
+                          a: ({ children, href }) => (
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline underline-offset-2 text-cyan-700 hover:text-cyan-600"
+                            >
+                              {children}
+                            </a>
+                          ),
+                        }}
+                      >
+                        {message.text}
+                      </ReactMarkdown>
+                    ) : (
+                      message.text
+                    )}
                   </div>
                 </div>
               ))}
