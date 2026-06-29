@@ -56,6 +56,18 @@ const projects = [
     appLabel: "TESTFLIGHT(iOS)",
   },
   {
+    title: "How Hot",
+    description:
+      "Predict food spiciness from images using deep learning, with user feedback for continual improvement.",
+    tags: ["Human in the loop", "MLOps", "ResNet"],
+    color: "slate" as const,
+    href: "https://howhot.netlify.app/",
+    image: `${basePath}/how_hot.png`,
+    app: "https://github.com/shuseiyokoi/App-HowHot",
+    github: "https://github.com/shuseiyokoi/App-HowHot",
+    medium: "https://medium.com/@shuseiyokoi/predict-spiciness-from-food-images-with-ai-and-human-in-the-loop-learning-e372d3a17019",
+  },
+  {
     title: "LLM Evaluation with Promptfoo",
     description:
       "Systematic comparison of language models like AWS Nova Pro vs. Micro using Promptfoo for RAG performance benchmarking.",
@@ -77,17 +89,6 @@ const projects = [
     github: "https://github.com/shuseiyokoi/California-Wildfire-Economic-Recovery/tree/main",
     medium: "",
   },
-  // {
-  //   title: "Movie ROI Prediction",
-  //   description:
-  //     "A machine learning project predicting movie ROI using metadata and AI-enhanced storyline analysis.",
-  //   tags: ["ML", "NLP", "PYTHON"],
-  //   color: "slate" as const,
-  //   href: "#",
-  //   image: `${basePath}/project-five.png`,
-  //   github: "",
-  //   medium: "",
-  // },
   // {
   //   title: "Wildfire Impact Analysis",
   //   description:
