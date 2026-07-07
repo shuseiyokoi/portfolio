@@ -224,63 +224,114 @@ export default function Home() {
         {/* About */}
         <section
           id="philosophy"
-          className="pt-12 pb-8 grid md:grid-cols-12 gap-8"
+          className="pt-16 pb-12 grid md:grid-cols-12 gap-10 md:gap-12 items-center"
         >
-          <div className="md:col-span-4 flex justify-center">
-            <div className="relative w-72 aspect-[4.5/5] border border-slate-200 rounded-md overflow-hidden bg-slate-50 group">
-              <Image
-                src={`${basePath}/photo.png`}
-                alt="Profile"
-                fill
-                className="object-cover z-0 opacity-100 transition-all duration-500"
-              />
+          <div className="md:col-span-7 order-2 md:order-1 space-y-6">
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">
+                Data Scientist · Los Angeles, CA
+              </p>
+
+              <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
+                Shusei Yokoi
+              </h1>
+
+              <p className="text-lg font-medium text-slate-600">
+                Turning Data into Smiles.
+              </p>
             </div>
+
+            <div className="space-y-4 text-slate-700 leading-relaxed font-light">
+              <p>
+                Data scientist focused on trustworthy and interpretable AI.
+                Currently pursuing an M.S. in Applied Data Science at USC and
+                conducting trustworthy AI research at ISI.
+              </p>
+              <p>
+                I build data-driven solutions with strong software engineering
+                skills and a business-driven mindset — working end-to-end
+                across the data science lifecycle, from defining business
+                problems and analyzing data to evaluating models and deploying
+                solutions that solve real-world problems.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <a
+                href={`${basePath}/resumes/Resume_ShuseiYokoi_20260605.pdf`}
+                download
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-700 transition-colors"
+              >
+                <Download size={15} />
+                Resume
+              </a>
+              <a
+                href="#work"
+                className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-300 text-slate-800 text-sm font-medium rounded-lg hover:border-slate-400 hover:bg-slate-50 transition-colors"
+              >
+                View Projects
+              </a>
+              <a
+                href="mailto:shuseiyokoi@gmail.com"
+                className="inline-flex items-center px-2 py-2.5 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
+              >
+                Contact →
+              </a>
+            </div>
+
+            {/* <div className="flex flex-wrap gap-2 pt-2">
+              {[
+                "Python",
+                "R",
+                "SQL",
+                "Swift",
+                "AWS",
+                "Azure",
+                "Tableau",
+                "LLM / RAG",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="text-xs font-medium text-slate-600 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div> */}
           </div>
 
-          <div className="md:col-span-8 space-y-6 text-slate-700 leading-relaxed font-light">
-            <div>
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-900">
-                Shusei Yokoi
-              </h2>
-
-              <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-700">
-                Data Scientist / Research Assistant
-              </h3>
+          <div className="md:col-span-5 order-1 md:order-2 flex justify-center">
+            <div className="relative w-64 md:w-80 aspect-[4.5/5] rounded-2xl overflow-hidden bg-slate-50 ring-1 ring-slate-200 shadow-lg shadow-slate-200/60">
+              <Image
+                src={`${basePath}/photo.png`}
+                alt="Portrait of Shusei Yokoi"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
-
-            <p>
-              Data Scientist with a focus on trustworthy and interpretable AI. Currently pursuing an M.S. in Applied Data Science at USC and conducting trustworthy AI research at ISI.
-
-              <br />
-              I build data-driven solutions with strong software engineering skills and a business-driven mindset. I work end-to-end across the data science lifecycle, from defining business problems and analyzing data to evaluating models and deploying solutions that solve real-world problems.
-
-              <br />
-              <br />
-              <strong className="text-slate-900 font-semibold">
-                — Turning Data into Smiles.
-              </strong>
-            </p>
           </div>
         </section>
 
         {/* Career */}
         <section id="career" className="pt-8 pb-12">
           <div className="flex items-end justify-between border-b border-slate-200 pb-4 mb-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Experience & Education
-            </h2>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700 mb-1.5">
+                Background
+              </p>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+                Experience & Education
+              </h2>
+            </div>
             <a
               href={`${basePath}/resumes/Resume_ShuseiYokoi_20260605.pdf`}
               download
-              className="mt-2 inline-flex items-center gap-2 text-base font-medium text-slate-700 hover:text-slate-900"
+              className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
             >
               <span>Resume</span>
-              <Download size={16} />
-
+              <Download size={15} />
             </a>
-            {/* <span className="hidden md:block text-xs text-slate-500">
-              Professional background and education
-            </span> */}
           </div>
 
           <div className="space-y-8">
@@ -293,7 +344,7 @@ export default function Home() {
               <div className="divide-y divide-slate-100">
                 {/* Research Experience */}
                 <details className="group py-3">
-                  <summary className="cursor-pointer list-none">
+                  <summary className="cursor-pointer list-none rounded-lg -mx-3 px-3 py-2 hover:bg-slate-50 transition-colors">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
                         <ChevronRight
@@ -352,7 +403,7 @@ export default function Home() {
 
               <div className="divide-y divide-slate-100">
                 <details className="group py-3">
-                  <summary className="cursor-pointer list-none">
+                  <summary className="cursor-pointer list-none rounded-lg -mx-3 px-3 py-2 hover:bg-slate-50 transition-colors">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
                         <ChevronRight
@@ -403,7 +454,7 @@ export default function Home() {
                 </details>
 
                 <details className="group py-3">
-                  <summary className="cursor-pointer list-none">
+                  <summary className="cursor-pointer list-none rounded-lg -mx-3 px-3 py-2 hover:bg-slate-50 transition-colors">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
                         <ChevronRight
@@ -480,7 +531,7 @@ export default function Home() {
 
 
                 <details className="group py-3">
-                  <summary className="cursor-pointer list-none">
+                  <summary className="cursor-pointer list-none rounded-lg -mx-3 px-3 py-2 hover:bg-slate-50 transition-colors">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
                         <ChevronRight
@@ -529,7 +580,7 @@ export default function Home() {
                   </div>
                 </details>
                 <details className="group py-3">
-                  <summary className="cursor-pointer list-none">
+                  <summary className="cursor-pointer list-none rounded-lg -mx-3 px-3 py-2 hover:bg-slate-50 transition-colors">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
                         <ChevronRight
@@ -604,7 +655,7 @@ export default function Home() {
 
                 {/* ABC Cooking Studio */}
                 <details className="group py-3">
-                  <summary className="cursor-pointer list-none">
+                  <summary className="cursor-pointer list-none rounded-lg -mx-3 px-3 py-2 hover:bg-slate-50 transition-colors">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
                         <ChevronRight
@@ -656,13 +707,13 @@ export default function Home() {
 
             {/* Education */}
             <div>
-              <h3 className="text-base font-semibold uppercase tracking-wide text-slate-500 mb-3">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">
                 Education
               </h3>
 
               <div className="divide-y divide-slate-100">
                 <details className="group py-3">
-                  <summary className="cursor-pointer list-none">
+                  <summary className="cursor-pointer list-none rounded-lg -mx-3 px-3 py-2 hover:bg-slate-50 transition-colors">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
                         <ChevronRight
@@ -696,7 +747,7 @@ export default function Home() {
                 </details>
 
                 <details className="group py-3">
-                  <summary className="cursor-pointer list-none">
+                  <summary className="cursor-pointer list-none rounded-lg -mx-3 px-3 py-2 hover:bg-slate-50 transition-colors">
                     <div className="grid md:grid-cols-12 gap-4 items-start">
                       <div className="md:col-span-8 flex items-start gap-3">
                         <ChevronRight
@@ -757,12 +808,14 @@ export default function Home() {
         {/* Projects */}
         < section id="work" className="pt-8 pb-12" >
           <div className="flex items-end justify-between border-b border-slate-200 pb-4 mb-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Projects
-            </h2>
-            <span className="text-xs text-slate-500">
-              {/* Selected data science and AI projects */}
-            </span>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700 mb-1.5">
+                Selected Work
+              </p>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+                Projects
+              </h2>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -801,11 +854,11 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => setShowAllProjects((prev) => !prev)}
-                  className="px-6 py-3 border border-slate-300 bg-white text-slate-800 font-medium tracking-wide uppercase text-sm hover:bg-slate-100 transition-colors rounded-md"
+                  className="px-6 py-2.5 border border-slate-300 bg-white text-slate-700 font-medium tracking-wide text-sm hover:border-slate-400 hover:bg-slate-50 transition-colors rounded-full"
                 >
                   {showAllProjects
-                    ? "SHOW LESS"
-                    : `SHOW MORE (${projects.length - 4})`}
+                    ? "Show less"
+                    : `Show all projects (${projects.length - 4} more)`}
                 </button>
               </div>
             )
@@ -815,8 +868,8 @@ export default function Home() {
 
       <footer className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-slate-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-center sm:justify-between">
-          <p className="text-xs text-slate-400">
-            {/* Made by Shusei Yokoi */}
+          <p className="hidden sm:block text-xs text-slate-400">
+            © {new Date().getFullYear()} Shusei Yokoi
           </p>
 
           <div className="flex items-center gap-3 sm:gap-6 text-[10px] sm:text-xs font-medium tracking-wide uppercase text-slate-500">
@@ -993,7 +1046,7 @@ function ProjectCard({
   appLabel?: string;
 }) {
   return (
-    <div className="group block space-y-4 p-6 bg-white border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all duration-300 rounded-xl">
+    <div className="group flex flex-col gap-4 p-6 bg-white border border-slate-200 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all duration-300 rounded-2xl">
       {image && (
         <a
           href={href}
@@ -1027,15 +1080,15 @@ function ProjectCard({
         </a>
       </div>
 
-      <p className="text-sm text-slate-600 leading-relaxed font-light border-l border-slate-200 pl-4">
+      <p className="text-sm text-slate-600 leading-relaxed font-light">
         {description}
       </p>
 
-      <div className="flex gap-2 pt-2 flex-wrap">
+      <div className="flex gap-2 pt-1 flex-wrap">
         {tags.map((tag) => (
           <span
             key={tag}
-            className="text-[10px] uppercase tracking-wide font-medium text-slate-600 bg-slate-100 px-2 py-1 border border-slate-200 transition-colors rounded-md"
+            className="text-[10px] uppercase tracking-wide font-medium text-slate-600 bg-slate-100 px-2 py-1 border border-slate-200 transition-colors rounded-full"
           >
             {tag}
           </span>
@@ -1043,7 +1096,7 @@ function ProjectCard({
       </div>
 
       {(app || github || medium) && (
-        <div className="flex items-center gap-4 pt-3 border-t border-slate-100">
+        <div className="flex items-center gap-4 pt-3 mt-auto border-t border-slate-100">
           {app && (
             <a
               href={app}

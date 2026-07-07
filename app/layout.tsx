@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shusei Yokoi",
-  description: "API_URLPersonal portfolio website for Shusei Yokoi.",
+  title: "Shusei Yokoi — Data Scientist",
+  description:
+    "Portfolio of Shusei Yokoi, a data scientist focused on trustworthy AI, LLM evaluation, and end-to-end data science solutions.",
 };
 
 export default function RootLayout({
