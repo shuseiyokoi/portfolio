@@ -245,7 +245,7 @@ export default function Home() {
               <p>
                 Data scientist focused on trustworthy and interpretable AI.
                 Currently pursuing an M.S. in Applied Data Science at USC and
-                conducting trustworthy AI research at ISI.
+                conducting trustworthy AI research at USC ISI.
               </p>
               <p>
                 I build data-driven solutions with strong software engineering
@@ -325,7 +325,7 @@ export default function Home() {
               </h2>
             </div>
             <a
-              href={`${basePath}/resumes/Resume_ShuseiYokoi_20260605.pdf`}
+              href={`${basePath}/resumes/Resume_ShuseiYokoi_20260715.pdf`}
               download
               className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
             >
@@ -358,7 +358,7 @@ export default function Home() {
                             USC Information Sciences Institute (ISI)
                           </p>
                           <p className="text-sm text-slate-500 mt-1">
-                            Research Assistant
+                            Student Researcher
                           </p>
                         </div>
                       </div>
