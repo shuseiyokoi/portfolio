@@ -258,7 +258,7 @@ export default function Home() {
 
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href={`${basePath}/resumes/Resume_ShuseiYokoi_20260715.pdf`}
+                href={`${basePath}/resumes/Resume_ShuseiYokoi_20260803.pdf`}
                 download
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-700 transition-colors"
               >
@@ -325,7 +325,7 @@ export default function Home() {
               </h2>
             </div>
             <a
-              href={`${basePath}/resumes/Resume_ShuseiYokoi_20260715.pdf`}
+              href={`${basePath}/resumes/Resume_ShuseiYokoi_20260803.pdf`}
               download
               className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
             >
