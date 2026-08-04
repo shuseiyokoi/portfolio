@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Download, ChevronRight } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { trackEvent } from "./gtag";
 
 const basePath =
   process.env.NODE_ENV === "production" ? "/portfolio" : "";
@@ -158,6 +159,8 @@ export default function Home() {
             "Sorry, I could not find an answer.",
         },
       ]);
+
+      trackEvent("chat_message_sent");
     } catch (error) {
       console.error(error);
 
@@ -212,6 +215,7 @@ export default function Home() {
 
             <a
               href="mailto:shuseiyokoi@gmail.com"
+              onClick={() => trackEvent("contact_click", { location: "nav" })}
               className="hover:text-slate-900 transition-colors"
             >
               Contact
@@ -260,6 +264,7 @@ export default function Home() {
               <a
                 href={`${basePath}/resumes/Resume_ShuseiYokoi_20260803.pdf`}
                 download
+                onClick={() => trackEvent("resume_download", { location: "hero" })}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-700 transition-colors"
               >
                 <Download size={15} />
@@ -273,6 +278,7 @@ export default function Home() {
               </a>
               <a
                 href="mailto:shuseiyokoi@gmail.com"
+                onClick={() => trackEvent("contact_click", { location: "hero" })}
                 className="inline-flex items-center px-2 py-2.5 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
               >
                 Contact →
@@ -327,6 +333,7 @@ export default function Home() {
             <a
               href={`${basePath}/resumes/Resume_ShuseiYokoi_20260803.pdf`}
               download
+              onClick={() => trackEvent("resume_download", { location: "career" })}
               className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
             >
               <span>Resume</span>
@@ -841,6 +848,7 @@ export default function Home() {
                 href="https://shuseiyokoi.notion.site/b431a86c98c4465f818de9af253b507e?v=04cea62a17da443786ea6c3f30a424a4"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent("notion_click")}
                 className="text-sm font-medium tracking-wide text-slate-500 hover:text-slate-900 underline underline-offset-4 transition-colors"
               >
                 View more project notes on Notion
@@ -875,6 +883,7 @@ export default function Home() {
           <div className="flex items-center gap-3 sm:gap-6 text-[10px] sm:text-xs font-medium tracking-wide uppercase text-slate-500">
             <a
               href="mailto:shuseiyokoi@gmail.com"
+              onClick={() => trackEvent("contact_click", { location: "footer" })}
               className="hover:text-slate-900 transition-colors"
             >
               Email
@@ -1011,7 +1020,10 @@ export default function Home() {
         {!isChatOpen && (
           <button
             type="button"
-            onClick={() => setIsChatOpen(true)}
+            onClick={() => {
+              setIsChatOpen(true);
+              trackEvent("chat_open");
+            }}
             className="px-4 py-3 bg-cyan-600 text-white font-bold tracking-widest uppercase text-xs hover:bg-cyan-500 transition-all rounded-full shadow-lg border border-cyan-400"
             aria-label="Open Ask Me chat"
           >
@@ -1052,6 +1064,9 @@ function ProjectCard({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() =>
+            trackEvent("project_click", { project: title, link_type: "primary" })
+          }
           className="relative block w-full h-40 border border-slate-200 bg-slate-50 rounded-lg overflow-hidden"
           aria-label={`Open ${title}`}
         >
@@ -1073,6 +1088,9 @@ function ProjectCard({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() =>
+            trackEvent("project_click", { project: title, link_type: "primary" })
+          }
           className="shrink-0"
           aria-label={`Open ${title}`}
         >
@@ -1102,6 +1120,9 @@ function ProjectCard({
               href={app}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("project_click", { project: title, link_type: "app" })
+              }
               className="flex items-center gap-2 text-xs font-medium tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
               aria-label={`${title} app`}
             >
@@ -1114,6 +1135,9 @@ function ProjectCard({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("project_click", { project: title, link_type: "github" })
+              }
               className="flex items-center gap-2 text-xs font-medium tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
               aria-label={`${title} GitHub repository`}
             >
@@ -1127,6 +1151,9 @@ function ProjectCard({
               href={medium}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("project_click", { project: title, link_type: "blog" })
+              }
               className="flex items-center gap-2 text-xs font-medium tracking-wide text-slate-500 hover:text-slate-900 transition-colors"
               aria-label={`${title} Medium blog`}
             >
@@ -1146,6 +1173,7 @@ function SocialLink({ href, label }: { href: string; label: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackEvent("social_click", { platform: label })}
       className="text-xs font-medium tracking-wide uppercase text-slate-500 hover:text-slate-900 transition-colors"
     >
       {label}
