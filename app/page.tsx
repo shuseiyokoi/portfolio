@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Download, ChevronRight } from "lucide-react";
@@ -880,27 +880,39 @@ export default function Home() {
             © {new Date().getFullYear()} Shusei Yokoi
           </p>
 
-          <div className="flex items-center gap-3 sm:gap-6 text-[10px] sm:text-xs font-medium tracking-wide uppercase text-slate-500">
+          <div className="flex items-center gap-4 sm:gap-6 text-slate-500">
             <a
               href="mailto:shuseiyokoi@gmail.com"
               onClick={() => trackEvent("contact_click", { location: "footer" })}
+              aria-label="Email"
+              title="Email"
               className="hover:text-slate-900 transition-colors"
             >
-              Email
+              <MailIcon className="w-4 h-4" />
             </a>
 
-            <SocialLink href="https://github.com/shuseiyokoi" label="GitHub" />
+            <SocialLink
+              href="https://github.com/shuseiyokoi"
+              label="GitHub"
+              icon={<GitHubIcon className="w-4 h-4" />}
+            />
 
             <SocialLink
               href="https://www.linkedin.com/in/shuseiyokoi"
               label="LinkedIn"
+              icon={<LinkedInIcon className="w-4 h-4" />}
             />
 
-            <SocialLink href="https://medium.com/@shuseiyokoi" label="Medium" />
+            <SocialLink
+              href="https://medium.com/@shuseiyokoi"
+              label="Medium"
+              icon={<MediumIcon className="w-4 h-4" />}
+            />
 
             <SocialLink
               href="https://x.com/shuseiyokoi"
               label="X"
+              icon={<XIcon className="w-4 h-4" />}
             />
           </div>
         </div>
@@ -1167,16 +1179,26 @@ function ProjectCard({
   );
 }
 
-function SocialLink({ href, label }: { href: string; label: string }) {
+function SocialLink({
+  href,
+  label,
+  icon,
+}: {
+  href: string;
+  label: string;
+  icon: ReactNode;
+}) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackEvent("social_click", { platform: label })}
-      className="text-xs font-medium tracking-wide uppercase text-slate-500 hover:text-slate-900 transition-colors"
+      aria-label={label}
+      title={label}
+      className="text-slate-500 hover:text-slate-900 transition-colors"
     >
-      {label}
+      {icon}
     </a>
   );
 }
@@ -1195,6 +1217,50 @@ function ArrowUpRightIcon({ className }: { className?: string }) {
     >
       <path d="M7 17L17 7" />
       <path d="M7 7h10v10" />
+    </svg>
+  );
+}
+
+function MailIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 6-10 7L2 6" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56z" />
+    </svg>
+  );
+}
+
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.22-6.83-5.97 6.83H1.66l7.73-8.84L1.25 2.25h6.83l4.72 6.24zm-1.16 17.52h1.83L6.98 4.13H5.02z" />
     </svg>
   );
 }
