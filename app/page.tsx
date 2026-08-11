@@ -745,11 +745,31 @@ export default function Home() {
                     </div>
                   </summary>
 
-                  <div className="mt-4 ml-6 text-sm text-slate-700 leading-relaxed">
-                    <p>
-                      Focused on machine learning, trustworthy AI, LLM
-                      evaluation, and real-world data science applications.
-                    </p>
+                  <div className="mt-4 ml-6 space-y-4 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        AI & Machine Learning Research
+                      </p>
+                      <p className="mt-1">
+                        LLM evaluation and sycophancy testing across GPT,
+                        Claude, and Gemini; algorithmic bias auditing and
+                        mitigation using SHAP and XGBoost on real-world
+                        lending data; supervised learning, deep learning, and
+                        statistical hypothesis testing.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        Winning award at USC AI4SE Hackathon 2026
+                      </p>
+                      <p className="mt-1">
+                        Won the Participants' Choice Award for CastIt,
+                        an AI podcast platform with a React/TypeScript/Supabase
+                        frontend that turns news articles into personalized audio
+                        episodes via an LLM-driven pipeline. Built the frontend
+                        end-to-end while a teammate built the backend pipeline.
+                      </p>
+                    </div>
                   </div>
                 </details>
 
