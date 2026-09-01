@@ -42,6 +42,17 @@ const projects = [
       "https://medium.com/@shuseiyokoi/same-data-different-conclusion-bias-by-prompt-in-llm-analysis-c175905fede1",
   },
   {
+    title: "Cast It",
+    description: "Django platform for AI podcast production — news ingestion, LLM script generation, TTS synthesis, and automated publishing.",
+    tags: ["RAG", "APP", "DJANGO", "TTS"],
+    color: "slate" as const,
+    href: "#",
+    image: `${basePath}/cast-it_head.png`,
+    github: "https://github.com/wenyenhsu/cast-it-podcast-builder",
+    medium: "https://medium.com/@shuseiyokoi/cast-it-building-an-ai-podcast-platform-from-news-ingestion-to-personalized-feed-29da5534b3fb",
+    app: "https://shuseiyokoi.github.io/cast-it-frontend/",
+  },
+  {
     title: "HealthSync",
     description:
       "An iOS app that syncs HealthKit data and delivers personalized health advice using Azure OpenAI.",
