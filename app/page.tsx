@@ -46,7 +46,7 @@ const projects = [
     description: "Django platform for AI podcast production — news ingestion, LLM script generation, TTS synthesis, and automated publishing.",
     tags: ["RAG", "APP", "DJANGO", "TTS"],
     color: "slate" as const,
-    href: "#",
+    href: "https://shuseiyokoi.github.io/cast-it-frontend/",
     image: `${basePath}/cast-it_head.png`,
     github: "https://github.com/wenyenhsu/cast-it-podcast-builder",
     medium: "https://medium.com/@shuseiyokoi/cast-it-building-an-ai-podcast-platform-from-news-ingestion-to-personalized-feed-29da5534b3fb",
