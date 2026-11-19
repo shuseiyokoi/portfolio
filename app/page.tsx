@@ -32,7 +32,7 @@ const projects = [
   {
     title: "Bias by Prompt in LLM",
     description:
-      "Shows that basic LLMs can change conclusions from the same loan data depending on prompt framing.",
+      "Same loan data, different conclusion: how emotional prompt framing and stated identity shift LLM bias verdicts (the precursor to my USC ISI study).",
     tags: ["LLM", "Fairness of AI"],
     color: "slate" as const,
     href: "https://medium.com/@shuseiyokoi/same-data-different-conclusion-bias-by-prompt-in-llm-analysis-c175905fede1",
@@ -40,6 +40,17 @@ const projects = [
     github: "https://github.com/shuseiyokoi/Bias-by-Prompt-LLM-Fairness",
     medium:
       "https://medium.com/@shuseiyokoi/same-data-different-conclusion-bias-by-prompt-in-llm-analysis-c175905fede1",
+  },
+  {
+    title: "California Wildfire Economic Recovery",
+    description:
+      "Used weather signals and difference-in-differences analysis to measure wildfire-related employment disruption and recovery.",
+    tags: ["DID", "Geospatial", "ECONOMICS"],
+    color: "slate" as const,
+    href: "https://github.com/shuseiyokoi/California-Wildfire-Economic-Recovery/tree/main",
+    image: `${basePath}/cal_fire.png`,
+    github: "https://github.com/shuseiyokoi/California-Wildfire-Economic-Recovery/tree/main",
+    medium: "",
   },
   {
     title: "Cast It",
@@ -56,7 +67,7 @@ const projects = [
     title: "HealthSync",
     description:
       "An iOS app that syncs HealthKit data and delivers personalized health advice using Azure OpenAI.",
-    tags: ["TYPESCRIPT", "LLM", "SWIFT", "IOS"],
+    tags: ["SWIFT", "IOS", "LLM", "HEALTHKIT"],
     color: "slate" as const,
     href: "https://testflight.apple.com/join/xBj899wE",
     image: `${basePath}/healthsync.png`,
@@ -89,17 +100,6 @@ const projects = [
     image: `${basePath}/promptfoo.png`,
     github: "https://github.com/shuseiyokoi/LLM-evaluation",
     notion: "https://shuseiyokoi.notion.site/Promptfoo-LLM-Evaluation-Techniques-23bf61fbe85c8089ab63e64295bca69c",
-  },
-  {
-    title: "California Wildfire Economic Recovery",
-    description:
-      "Used weather signals and difference-in-differences analysis to measure wildfire-related employment disruption and recovery.",
-    tags: ["DID", "Geospatial", "ECONOMICS"],
-    color: "slate" as const,
-    href: "https://github.com/shuseiyokoi/California-Wildfire-Economic-Recovery/tree/main",
-    image: `${basePath}/cal_fire.png`,
-    github: "https://github.com/shuseiyokoi/California-Wildfire-Economic-Recovery/tree/main",
-    medium: "",
   },
   // {
   //   title: "Wildfire Impact Analysis",
@@ -258,9 +258,11 @@ export default function Home() {
 
             <div className="space-y-4 text-slate-700 leading-relaxed font-light">
               <p>
-                Data scientist focused on trustworthy and interpretable AI.
-                Currently pursuing an M.S. in Applied Data Science at USC and
-                conducting trustworthy AI research at USC ISI.
+                Data scientist focused on experimentation, causal inference,
+                and LLM evaluation. Finishing an M.S. in Computer Science
+                (Applied Data Science) at USC in May 2027 and doing trustworthy
+                AI research at USC ISI.
+                U.S. permanent resident; no sponsorship needed.
               </p>
               <p>
                 I build data-driven solutions with strong software engineering
@@ -273,7 +275,7 @@ export default function Home() {
 
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href={`${basePath}/resumes/Resume_ShuseiYokoi_20260918.pdf`}
+                href={`${basePath}/resumes/Resume_ShuseiYokoi_20261119.pdf`}
                 download
                 onClick={() => trackEvent("resume_download", { location: "hero" })}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-700 transition-colors"
@@ -342,7 +344,7 @@ export default function Home() {
               </h2>
             </div>
             <a
-              href={`${basePath}/resumes/Resume_ShuseiYokoi_20260918.pdf`}
+              href={`${basePath}/resumes/Resume_ShuseiYokoi_20261119.pdf`}
               download
               onClick={() => trackEvent("resume_download", { location: "career" })}
               className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
@@ -376,7 +378,7 @@ export default function Home() {
                             USC Information Sciences Institute (ISI)
                           </p>
                           <p className="text-sm text-slate-500 mt-1">
-                            Student Researcher
+                            Student Researcher, Trustworthy AI
                           </p>
                         </div>
                       </div>
@@ -390,23 +392,35 @@ export default function Home() {
                   <div className="mt-4 ml-6 space-y-5 text-sm text-slate-700 leading-relaxed">
                     <div>
                       <p className="font-semibold text-slate-900">
-                        Bias by Prompt LLM Fairness{" "}
+                        Emotional Framing &amp; Bias in LLM Lending Judgments{" "}
                         <span className="font-normal text-slate-500">
-                          | Python, ChatGPT, Claude, Gemini, Qwen
+                          | Python, vLLM, HPC, Anthropic/OpenRouter batch APIs, Promptfoo
                         </span>
                       </p>
 
                       <ul className="mt-2 space-y-1 list-disc pl-5">
                         <li>
-                          Conducting research on trustworthy AI, focusing on fairness, bias, and reliability in LLM-based decision-making
+                          Designed controlled experiments on 2024 California HMDA mortgage data testing whether emotional
+                          prompt framing and stated user identity shift LLM bias verdicts (n=300 per condition,
+                          chi-square/Fisher exact tests); built the batch-inference pipeline behind 19,200 calls across 14 models.
                         </li>
                         <li>
-                          Designed controlled experiments to evaluate the effects of prompt framing on responses across LLMs,
-                          including ChatGPT, Claude, Gemini, and Qwen
+                          Found the effect depends on input format: emotional framing pushed one model from 0% to 100%
+                          &quot;biased&quot; verdicts on summary tables but removed every one on raw loan files (63.3% to 0%).
                         </li>
                         <li>
-                          Identified early evidence that emotional prompt framing can alter LLM behavior, causing conclusion shifts in
-                          some models and reduced confidence in others
+                          Designed ground-truth labels and scored verdicts with hit rate, false-alarm rate and accuracy against an
+                          always-NO baseline; a thinking-off ablation showed most of the drop between model versions came from
+                          the newer model generation, not reasoning. Paper in preparation.
+                        </li>
+                        <li>
+                          Code and experiment log:{" "}
+                          <a
+                            href="https://github.com/shuseiyokoi/llm-sycophancy-emotional-framing"
+                            className="text-cyan-700 underline hover:text-cyan-900"
+                          >
+                            github.com/shuseiyokoi/llm-sycophancy-emotional-framing
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -451,7 +465,7 @@ export default function Home() {
                       <p className="font-semibold text-slate-900">
                         Founded and Developed an AI-powered Solutions{" "}
                         <span className="font-normal text-slate-500">
-                          | R, Python, Swift, Azure OpenAI
+                          | Swift, Python (FastAPI), Azure OpenAI
                         </span>
                       </p>
 
@@ -502,23 +516,23 @@ export default function Home() {
                       <p className="font-semibold text-slate-900">
                         Gym Chain Health Data Analysis{" "}
                         <span className="font-normal text-slate-500">
-                          | R, SQL
+                          | Python, R, SQL
                         </span>
                       </p>
 
                       <ul className="mt-2 space-y-1 list-disc pl-5">
                         <li>
-                          Analyzed 200,000 member records for a gymnasium
-                          company with 150+ branches across Japan.
+                          Set retention as the success metric with the client,
+                          then analyzed 200K+ member records for a gym chain with
+                          150+ branches across Japan.
                         </li>
                         <li>
-                          Identified a 3-month weight regain trend in younger
-                          members and developed tailored retention strategies.
+                          Identified a 3-month weight regain pattern in younger
+                          members that signaled churn.
                         </li>
                         <li>
-                          Implemented a notification service to re-engage
-                          inactive members, increasing re-engagement rate by
-                          30%.
+                          Built a churn-risk notification service to re-engage
+                          at-risk members; re-engagement rose 30% after launch.
                         </li>
                       </ul>
                     </div>
@@ -538,9 +552,27 @@ export default function Home() {
                           bottlenecks.
                         </li>
                         <li>
-                          Found resource allocation inefficiencies and
-                          recommended more frequent ticket creation and resource
-                          optimization.
+                          Traced the bottleneck in a 50-person engineering org to
+                          resource allocation and drove changes that raised
+                          ticket throughput by 35%.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p className="font-semibold text-slate-900">
+                        Hotel Customer Segmentation{" "}
+                        <span className="font-normal text-slate-500">
+                          | Python, XGBoost, SHAP
+                        </span>
+                      </p>
+
+                      <ul className="mt-2 space-y-1 list-disc pl-5">
+                        <li>
+                          Built an XGBoost model on a hotel chain&apos;s account
+                          data and used SHAP to understand it, finding two user
+                          types (business vs leisure) with different favorite
+                          hotels so marketing could target each.
                         </li>
                       </ul>
                     </div>
@@ -585,13 +617,19 @@ export default function Home() {
 
                       <ul className="mt-2 space-y-1 list-disc pl-5">
                         <li>
-                          Directed end-to-end development of a multi-platform
-                          office management system for teams in Vietnam, China,
-                          and Japan.
+                          Led a 30-engineer multinational Agile team (Vietnam,
+                          China, Japan) as technical PM on AWS/Azure solutions
+                          for 10+ client companies.
                         </li>
                         <li>
-                          Led UI/UX design, back-end architecture, testing, and
-                          cross-platform deployment.
+                          Shipped a contactless health-check system and
+                          virtual-office platform that raised daily active users
+                          by 40%.
+                        </li>
+                        <li>
+                          Owned requirements, UI/UX and back-end design, testing,
+                          and cross-platform deployment between client
+                          stakeholders and engineers.
                         </li>
                       </ul>
                     </div>
@@ -618,7 +656,7 @@ export default function Home() {
                       </div>
 
                       <p className="md:col-span-4 text-sm text-slate-500 md:text-right">
-                        2020 – 2022
+                        2021 – 2022
                       </p>
                     </div>
                   </summary>
@@ -643,17 +681,17 @@ export default function Home() {
                         </li>
                         <li>
                           Recommended targeted ads, in-store improvements, and
-                          loyalty strategies based on retention and regional
-                          growth insights.
+                          loyalty strategies for 15 client stakeholders; the work
+                          led SoftBank to form a dedicated trade-area team.
                         </li>
                       </ul>
                     </div>
 
                     <div>
                       <p className="font-semibold text-slate-900">
-                        AI Engineer{" "}
+                        Billboard Placement Model &amp; Member Segmentation{" "}
                         <span className="font-normal text-slate-500">
-                          | Python, SQL
+                          | Python, SQL, XGBoost, K-means
                         </span>
                       </p>
 
@@ -665,6 +703,11 @@ export default function Home() {
                         <li>
                           Improved model performance through data engineering
                           and feature design, achieving an AUC of 0.70.
+                        </li>
+                        <li>
+                          Segmented 3,000+ incubation-program members (K-means)
+                          for an executive report that informed the launch of
+                          the Station AI hub.
                         </li>
                       </ul>
                     </div>
@@ -716,6 +759,11 @@ export default function Home() {
                           Predicted product sales using a multilevel model with
                           category-specific price elasticity.
                         </li>
+                        <li>
+                          Found in Google Analytics that add-to-cart pushed
+                          shoppers away from browsing; the CEO backed the finding
+                          and the cart flow was changed.
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -745,13 +793,13 @@ export default function Home() {
                             University of Southern California
                           </p>
                           <p className="text-sm text-slate-500 mt-1">
-                            M.S. Applied Data Science
+                            M.S. Computer Science (Applied Data Science) · GPA 3.92
                           </p>
                         </div>
                       </div>
 
                       <p className="md:col-span-4 text-sm text-slate-500 md:text-right">
-                        Expected 2027
+                        Expected May 2027
                       </p>
                     </div>
                   </summary>
@@ -763,10 +811,9 @@ export default function Home() {
                       </p>
                       <p className="mt-1">
                         LLM evaluation and sycophancy testing across GPT,
-                        Claude, and Gemini; algorithmic bias auditing and
-                        mitigation using SHAP and XGBoost on real-world
-                        lending data; supervised learning, deep learning, and
-                        statistical hypothesis testing.
+                        Claude, and Gemini; supervised learning, deep learning,
+                        statistical hypothesis testing, and Spark for large-scale
+                        data processing.
                       </p>
                     </div>
                     <div>
@@ -774,11 +821,13 @@ export default function Home() {
                         Winning award at USC AI4SE Hackathon 2026
                       </p>
                       <p className="mt-1">
-                        Won the Participants' Choice Award for CastIt,
-                        an AI podcast platform with a React/TypeScript/Supabase
-                        frontend that turns news articles into personalized audio
-                        episodes via an LLM-driven pipeline. Built the frontend
-                        end-to-end while a teammate built the backend pipeline.
+                        Won the Participants&apos; Choice Award for Cast It, an AI
+                        podcast platform that turns news articles into
+                        personalized audio episodes. Conceived and led a 2-person
+                        team; built the database, ingestion scripts, per-listener
+                        episode ranking from listening history, and tuned the
+                        TTS/LLM stack (Django, RAG, Ollama, Hugging Face) for a
+                        live app with 10 users.
                       </p>
                     </div>
                   </div>
